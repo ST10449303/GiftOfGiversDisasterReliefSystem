@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Gift of the Givers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GiftOfGiversDisasterReliefSystem.styles.css" asp-append-version="true" />
+</head>
+
+<body>
+
+    <!-- =========================================
+         NAVIGATION
+         ========================================= -->
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg site-navbar">
+
+            <div class="container">
+
+                <!-- =================================
+                     ORGANISATION NAME
+                     ================================= -->
+
+                <a class="navbar-brand"
+                   asp-controller="Home"
+                   asp-action="Index">
+
+                    <span class="brand-name">
+                        GIFT OF THE GIVERS
+                    </span>
+
+                    <span class="brand-tagline">
+                        DISASTER RELIEF
+                    </span>
+
+                </a>
+
+
+                <!-- =================================
+                     MOBILE MENU BUTTON
+                     ================================= -->
+
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mainNavigation"
+                        aria-controls="mainNavigation"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+
+                    <span class="navbar-toggler-icon"></span>
+
+                </button>
+
+
+                <!-- =================================
+                     NAVIGATION MENU
+                     ================================= -->
+
+                <div class="collapse navbar-collapse"
+                     id="mainNavigation">
+
+                    <ul class="navbar-nav ms-auto align-items-lg-center">
+
+
+                        <!-- =================================
+                             HOME
+                             ================================= -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Home"
+                               asp-action="Index">
+
+                                Home
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             ABOUT
+                             ================================= -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="About"
+                               asp-action="Index">
+
+                                About
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             DONATE
+                             ================================= -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Donation"
+                               asp-action="Index">
+
+                                Donate
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             VOLUNTEER
+                             ================================= -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Volunteer"
+                               asp-action="Index">
+
+                                Volunteer
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             CONTACT
+                             ================================= -->
+
+                        <li class="nav-item">
+
+                            <a class="nav-link"
+                               asp-controller="Contact"
+                               asp-action="Index">
+
+                                Contact
+
+                            </a>
+
+                        </li>
+
+
+                        <!-- =================================
+                             EMPLOYEE NAVIGATION
+                             ================================= -->
+                        @if (User.Identity != null &&
+                                                User.Identity.IsAuthenticated &&
+                                                User.IsInRole("Employee"))
+                        {
+
+                            <!-- EMPLOYEE DASHBOARD -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   asp-controller="Employee"
+                                   asp-action="Index">
+
+                                    Employee Dashboard
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- DONATIONS -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   asp-controller="Employee"
+                                   asp-action="Donations">
+
+                                    Donations
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- VOLUNTEERS -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   asp-controller="Employee"
+                                   asp-action="Volunteers">
+
+                                    Volunteers
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- RELIEF UPDATES -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   asp-controller="Employee"
+                                   asp-action="Updates">
+
+                                    Relief Updates
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- MESSAGES -->
+
+                            <li class="nav-item">
+
+                                <a class="nav-link"
+                                   asp-controller="Employee"
+                                   asp-action="Messages">
+
+                                    Messages
+
+                                </a>
+
+                            </li>
+
+                        }
+
+
+                        <!-- =================================
+                             LOGIN AND REGISTER
+                             ================================= -->
+                        @if (!(User.Identity?.IsAuthenticated ?? false))
+                        {
+
+                            <!-- LOGIN -->
+
+                            <li class="nav-item ms-lg-3">
+
+                                <a class="nav-link login-link"
+                                   asp-area="Identity"
+                                   asp-page="/Account/Login">
+
+                                    Login
+
+                                </a>
+
+                            </li>
+
+
+                            <!-- REGISTER -->
+
+                            <li class="nav-item">
+
+                                <a class="btn register-btn"
+                                   asp-area="Identity"
+                                   asp-page="/Account/Register">
+
+                                    Register
+
+                                </a>
+
+                            </li>
+
+                        }
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================================
+         PAGE CONTENT
+         ========================================= -->
+
+    <main>
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+         ========================================= -->
+
+    <footer class="site-footer">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6">
+
+                    <h5>
+                        GIFT OF THE GIVERS
+                    </h5>
+
+                    <p>
+                        Supporting communities affected by disasters
+                        through humanitarian relief.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-6 text-md-end">
+
+                    <p>
+                        © 2026 Gift of the Givers
+                    </p>
+
+                    <a asp-controller="Home"
+                       asp-action="Privacy">
+
+                        Privacy
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         SCRIPTS
+         ========================================= -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

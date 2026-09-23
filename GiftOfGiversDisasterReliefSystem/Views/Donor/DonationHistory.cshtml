@@ -1,0 +1,266 @@
+﻿@model IEnumerable<GiftOfGiversDisasterReliefSystem.Data.Donation>
+
+@{
+    ViewData["Title"] = "Donation History";
+}
+
+<div class="donor-dashboard">
+
+    <!-- =========================================
+         PAGE HEADER
+         ========================================= -->
+
+    <section class="donor-welcome">
+
+        <div class="container">
+
+            <p class="donor-small-title">
+                DONATION HISTORY
+            </p>
+
+            <h1>
+                Your Donations
+            </h1>
+
+            <p>
+                View your previous donations and download
+                your tax certificates.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DONATION HISTORY CONTENT
+         ========================================= -->
+
+    <section class="donor-dashboard-content">
+
+        <div class="container">
+
+            <div class="donor-panel-card">
+
+                <!-- =================================
+                     TITLE
+                     ================================= -->
+
+                <div class="mb-4">
+
+                    <h2>
+                        Donation History
+                    </h2>
+
+                    <p>
+                        Thank you for supporting disaster relief
+                        and communities in need.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     CHECK FOR DONATIONS
+                     ================================= -->
+                @if (Model != null && Model.Any())
+                {
+
+                    <!-- =================================
+                         DONATION TABLE
+                         ================================= -->
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Currency
+                                    </th>
+
+                                    <th>
+                                        Tax Certificate
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var donation in Model)
+                                {
+
+                                    <tr>
+
+                                        <!-- =================================
+                                             DATE
+                                             ================================= -->
+
+                                        <td>
+                                            @(donation.DonationDate
+                                                                                .ToLocalTime()
+                                                                                .ToString("dd MMM yyyy"))
+                                </td>
+
+
+                                        <!-- =================================
+                                             AMOUNT
+                                             ================================= -->
+
+                                        <td>
+
+                                            <strong>
+                                                @donation.Currency
+                                                @donation.Amount.ToString("N2")
+                                            </strong>
+
+                                        </td>
+
+
+                                        <!-- =================================
+                                             DONATION TYPE
+                                             ================================= -->
+
+                                        <td>
+                                            @donation.DonationType
+                                        </td>
+
+
+                                        <!-- =================================
+                                             CURRENCY
+                                             ================================= -->
+
+                                        <td>
+                                            @donation.Currency
+                                        </td>
+
+
+                                        <!-- =================================
+                                             TAX CERTIFICATE
+                                             ================================= -->
+
+                                        <td>
+
+                                    @if (!string.IsNullOrWhiteSpace(
+                                                                        donation.TaxCertificateNumber))
+                                            {
+
+                                                <a asp-controller="Donor"
+                                                   asp-action="DownloadTaxCertificate"
+                                                   asp-route-id="@donation.Id"
+                                                   class="donor-yellow-button">
+
+                                                    Download PDF
+
+                                                </a>
+
+                                            }
+                                            else
+                                            {
+
+                                                <span class="text-muted">
+
+                                                    Not available
+
+                                                </span>
+
+                                            }
+
+                                        </td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                }
+                else
+                {
+
+                    <!-- =================================
+                         NO DONATIONS
+                         ================================= -->
+
+                    <div class="text-center py-5">
+
+                        <div style="font-size: 50px;">
+                            ♥
+                        </div>
+
+                        <h3>
+                            No Donations Yet
+                        </h3>
+
+                        <p>
+                            You have not made any donations yet.
+                            Your support can make a difference.
+                        </p>
+
+                        <a asp-controller="Donor"
+                           asp-action="Donate"
+                           class="donor-yellow-button">
+
+                            Make Your First Donation
+
+                        </a>
+
+                    </div>
+
+                }
+
+
+                <!-- =================================
+                     ACTION BUTTONS
+                     ================================= -->
+
+                <div class="mt-4 d-flex flex-wrap gap-3">
+
+                    <a asp-controller="Donor"
+                       asp-action="Donate"
+                       class="donor-yellow-button">
+
+                        Make Another Donation
+
+                    </a>
+
+
+                    <a asp-controller="Donor"
+                       asp-action="Index"
+                       class="donor-outline-button">
+
+                        Back to Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

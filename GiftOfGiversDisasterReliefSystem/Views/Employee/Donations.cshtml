@@ -1,0 +1,428 @@
+﻿@model IEnumerable<GiftOfGiversDisasterReliefSystem.Models.EmployeeDonationViewModel>
+
+@{
+    ViewData["Title"] = "Donations";
+
+    var donations = Model?.ToList()
+                    ?? new List<GiftOfGiversDisasterReliefSystem.Models.EmployeeDonationViewModel>();
+
+    var totalDonations = donations.Count;
+
+    var anonymousDonations = donations.Count(d => d.IsAnonymous);
+
+    var identifiedDonations = donations.Count(d => !d.IsAnonymous);
+}
+
+<div class="employee-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+
+    <section class="employee-dashboard-header">
+
+        <div class="container">
+
+            <p class="employee-small-title">
+                DONATION MANAGEMENT
+            </p>
+
+            <h1>
+                Donor Donations
+            </h1>
+
+            <p>
+                View donations received from donors and
+                monitor contributions to disaster relief.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         DONATION CONTENT
+         ========================================== -->
+
+    <section class="employee-content">
+
+        <div class="container">
+
+            <!-- ==========================================
+                 SUMMARY CARDS
+                 ========================================== -->
+
+            <div class="row g-4 mb-5">
+
+                <!-- TOTAL DONATIONS -->
+
+                <div class="col-md-4">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            TOTAL DONATIONS
+                        </span>
+
+                        <h2>
+                            @totalDonations
+                        </h2>
+
+                        <p>
+                            Donations received
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- IDENTIFIED DONORS -->
+
+                <div class="col-md-4">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            IDENTIFIED DONORS
+                        </span>
+
+                        <h2>
+                            @identifiedDonations
+                        </h2>
+
+                        <p>
+                            Donor information available
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ANONYMOUS DONATIONS -->
+
+                <div class="col-md-4">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            ANONYMOUS DONATIONS
+                        </span>
+
+                        <h2>
+                            @anonymousDonations
+                        </h2>
+
+                        <p>
+                            Donor identity hidden
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 DONATION PANEL
+                 ========================================== -->
+
+            <div class="donor-panel-card">
+
+                <!-- ==========================================
+                     PANEL HEADER
+                     ========================================== -->
+
+                <div class="mb-4">
+
+                    <p class="donor-small-title">
+                        CONTRIBUTIONS
+                    </p>
+
+                    <h2>
+                        All Donations
+                    </h2>
+
+                    <p>
+                        Employees can view donor details,
+                        donation amounts and anonymous contributions.
+                    </p>
+
+                </div>
+
+
+                <!-- ==========================================
+                     DONATION TABLE
+                     ========================================== -->
+                @if (donations.Any())
+                {
+
+                    <div class="table-responsive">
+
+                        <table class="table align-middle">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Donor
+                                    </th>
+
+                                    <th>
+                                        Email
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Type
+                                    </th>
+
+                                    <th>
+                                        Currency
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                    <th>
+                                        Anonymous
+                                    </th>
+
+                                    <th>
+                                        Certificate
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+                                @foreach (var donation in donations)
+                                {
+
+                                    <tr>
+
+                                        <!-- ==================================
+                                             DONOR
+                                             ================================== -->
+
+                                        <td>
+
+                                            @if (donation.IsAnonymous)
+                                            {
+
+                                                <strong>
+                                                    Anonymous Donor
+                                                </strong>
+
+                                            }
+                                            else
+                                            {
+
+                                                <strong>
+                                                    @donation.DonorName
+                                                </strong>
+
+                                            }
+
+                                        </td>
+
+
+                                        <!-- ==================================
+                                             EMAIL
+                                             ================================== -->
+
+                                        <td>
+
+                                            @if (donation.IsAnonymous)
+                                            {
+
+                                                <span class="text-muted">
+                                                    Hidden
+                                                </span>
+
+                                            }
+                                            else
+                                            {
+
+                                                @donation.DonorEmail
+
+                                            }
+
+                                    </td>
+
+
+                                    <!-- ==================================
+                                         AMOUNT
+                                         ================================== -->
+
+                                    <td>
+
+                                        <strong>
+                                            @donation.Currency
+                                            @donation.Amount.ToString("N2")
+                                        </strong>
+
+                                    </td>
+
+
+                                    <!-- ==================================
+                                         DONATION TYPE
+                                         ================================== -->
+
+                                    <td>
+
+                                        @donation.DonationType
+
+                                    </td>
+
+
+                                    <!-- ==================================
+                                         CURRENCY
+                                         ================================== -->
+
+                                    <td>
+
+                                        @donation.Currency
+
+                                    </td>
+
+
+                                    <!-- ==================================
+                                         DATE
+                                         ================================== -->
+
+                                    <td>
+
+                                        @(
+                                                                            donation.DonationDate
+                                                                            .ToLocalTime()
+                                                                            .ToString("dd MMM yyyy")
+                                                                            )
+
+                                </td>
+
+
+                                        <!-- ==================================
+                                             ANONYMOUS
+                                             ================================== -->
+
+                                        <td>
+
+                                    @if (donation.IsAnonymous)
+                                            {
+
+                                                <span class="badge bg-secondary">
+                                                    Yes
+                                                </span>
+
+                                            }
+                                            else
+                                            {
+
+                                                <span class="badge bg-success">
+                                                    No
+                                                </span>
+
+                                            }
+
+                                        </td>
+
+
+                                        <!-- ==================================
+                                             TAX CERTIFICATE
+                                             ================================== -->
+
+                                        <td>
+
+                                            @if (!string.IsNullOrWhiteSpace(
+                                                                                donation.TaxCertificateNumber))
+                                            {
+
+                                                <span class="text-success">
+                                                    Available
+                                                </span>
+
+                                            }
+                                            else
+                                            {
+
+                                                <span class="text-muted">
+                                                    Not available
+                                                </span>
+
+                                            }
+
+                                        </td>
+
+                                    </tr>
+
+                                }
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                }
+                else
+                {
+
+                    <!-- ==========================================
+                         NO DONATIONS
+                         ========================================== -->
+
+                    <div class="text-center py-5">
+
+                        <div style="font-size: 50px;">
+                            ♥
+                        </div>
+
+                        <h3>
+                            No Donations Yet
+                        </h3>
+
+                        <p>
+                            No donations have been recorded
+                            in the system yet.
+                        </p>
+
+                    </div>
+
+                }
+
+
+                <!-- ==========================================
+                     BACK BUTTON
+                     ========================================== -->
+
+                <div class="mt-4">
+
+                    <a asp-controller="Employee"
+                       asp-action="Index"
+                       class="donor-outline-button">
+
+                        ← Back to Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

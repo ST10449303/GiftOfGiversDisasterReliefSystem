@@ -1,0 +1,302 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using GiftOfGiversDisasterReliefSystem.Data
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - Gift of the Givers
+    </title>
+
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+</head>
+
+
+<body class="employee-layout">
+
+
+    <!-- ==========================================
+         EMPLOYEE NAVIGATION
+         ========================================== -->
+
+    <header class="employee-navbar">
+
+        <div class="employee-navbar-container">
+
+
+            <!-- ==========================================
+                 BRAND
+                 ========================================== -->
+
+            <a asp-controller="Employee"
+               asp-action="Index"
+               class="employee-brand">
+
+                <span class="employee-brand-title">
+                    GIFT OF THE GIVERS
+                </span>
+
+                <span class="employee-brand-subtitle">
+                    DISASTER RELIEF
+                </span>
+
+            </a>
+
+
+            <!-- ==========================================
+                 MOBILE MENU BUTTON
+                 ========================================== -->
+
+            <button type="button"
+                    class="employee-menu-button"
+                    onclick="openEmployeeMenu()"
+                    aria-label="Open employee menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- ==========================================
+                 DESKTOP / MOBILE NAVIGATION
+                 ========================================== -->
+
+            <nav id="employeeNavigation"
+                 class="employee-navigation">
+
+
+                <!-- CLOSE BUTTON -->
+
+                <button type="button"
+                        class="employee-menu-close"
+                        onclick="closeEmployeeMenu()"
+                        aria-label="Close employee menu">
+
+                    &times;
+
+                </button>
+
+
+                <!-- DASHBOARD -->
+
+                <a asp-controller="Employee"
+                   asp-action="Index"
+                   class="employee-nav-link">
+
+                    Dashboard
+
+                </a>
+
+
+                <!-- RELIEF UPDATES -->
+
+                <a asp-controller="Employee"
+                   asp-action="Updates"
+                   class="employee-nav-link">
+
+                    Relief Updates
+
+                </a>
+
+
+                <!-- DONATIONS -->
+
+                <a asp-controller="Employee"
+                   asp-action="Donations"
+                   class="employee-nav-link">
+
+                    Donations
+
+                </a>
+
+
+                <!-- VOLUNTEERS -->
+
+                <a asp-controller="Employee"
+                   asp-action="Volunteers"
+                   class="employee-nav-link">
+
+                    Volunteer Sign-ups
+
+                </a>
+
+
+                <!-- MESSAGES -->
+
+                <a asp-controller="Employee"
+                   asp-action="Messages"
+                   class="employee-nav-link">
+
+                    Messages
+
+                </a>
+
+
+                <!-- PROFILE -->
+
+                <a asp-controller="Employee"
+                   asp-action="Profile"
+                   class="employee-nav-link">
+
+                    Manage Profile
+
+                </a>
+
+
+                <!-- LOGOUT -->
+
+                <form asp-area="Identity"
+                      asp-page="/Account/Logout"
+                      method="post"
+                      class="employee-logout-form">
+
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit"
+                            class="employee-logout">
+
+                        Log Out
+
+                    </button>
+
+                </form>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==========================================
+         MOBILE SIDEBAR OVERLAY
+         ========================================== -->
+
+    <div id="employeeMenuOverlay"
+         class="employee-menu-overlay"
+         onclick="closeEmployeeMenu()">
+    </div>
+
+
+    <!-- ==========================================
+         PAGE CONTENT
+         ========================================== -->
+
+    <main>
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+
+    <footer class="employee-footer">
+
+        <div class="container">
+
+            <span>
+                Gift of the Givers
+            </span>
+
+            <span>
+                Employee Portal
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+         ========================================== -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+
+    <script>
+
+        function openEmployeeMenu() {
+
+            var menu =
+                document.getElementById("employeeNavigation");
+
+            var overlay =
+                document.getElementById("employeeMenuOverlay");
+
+            menu.classList.add("show");
+
+            overlay.classList.add("show");
+
+            document.body.classList.add("employee-menu-open");
+
+        }
+
+
+        function closeEmployeeMenu() {
+
+            var menu =
+                document.getElementById("employeeNavigation");
+
+            var overlay =
+                document.getElementById("employeeMenuOverlay");
+
+            menu.classList.remove("show");
+
+            overlay.classList.remove("show");
+
+            document.body.classList.remove("employee-menu-open");
+
+        }
+
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 991) {
+
+                closeEmployeeMenu();
+
+            }
+
+        });
+
+    </script>
+
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false)
+
+</body>
+
+</html>

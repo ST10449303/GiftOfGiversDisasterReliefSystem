@@ -1,0 +1,2859 @@
+/* =========================================
+   GIFT OF THE GIVERS
+   Theme: Sky Blue | White | Black
+   Font: Poppins
+   ========================================= */
+
+/* ---------- GENERAL ---------- */
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #111111;
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+p {
+    font-weight: 400;
+}
+
+
+/* ---------- NAVIGATION ---------- */
+
+.site-navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #4FC3F7;
+    padding: 15px 0;
+}
+
+.brand-name {
+    display: block;
+    color: #111111;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.brand-tagline {
+    display: block;
+    color: #0288D1;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 1.8px;
+    margin-top: 3px;
+}
+
+.nav-link {
+    color: #111111 !important;
+    font-size: 0.92rem;
+    font-weight: 500;
+    margin-left: 14px;
+    transition: 0.2s ease;
+}
+
+    .nav-link:hover {
+        color: #0288D1 !important;
+    }
+
+.login-link {
+    border-left: 1px solid #dddddd;
+    padding-left: 20px !important;
+}
+
+.register-btn {
+    background-color: #0288D1;
+    color: #ffffff !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 8px 17px;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+    .register-btn:hover {
+        background-color: #111111;
+        color: #ffffff !important;
+    }
+
+
+/* ---------- HOME HERO ---------- */
+
+.hero-section {
+    background-color: #4FC3F7;
+    padding: 85px 0;
+}
+
+    .hero-section h1 {
+        color: #111111;
+        font-size: 3.2rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        margin-bottom: 20px;
+    }
+
+    .hero-section p {
+        color: #222222;
+        font-size: 1rem;
+        line-height: 1.8;
+        max-width: 600px;
+    }
+
+.hero-buttons {
+    margin-top: 25px;
+}
+
+
+/* ---------- BUTTONS ---------- */
+
+.btn-donate {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+    .btn-donate:hover {
+        background-color: #0288D1;
+        color: #ffffff;
+    }
+
+.btn-volunteer {
+    background-color: #ffffff;
+    color: #111111;
+    padding: 12px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+    .btn-volunteer:hover {
+        background-color: #111111;
+        color: #ffffff;
+    }
+
+
+/* ---------- SIMPLE HOME SECTION ---------- */
+
+.simple-section {
+    padding: 65px 0;
+    background-color: #ffffff;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+    .section-title h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        color: #111111;
+        margin-bottom: 10px;
+    }
+
+    .section-title p {
+        color: #666666;
+        font-size: 0.95rem;
+    }
+
+
+/* ---------- CARDS ---------- */
+
+.simple-card {
+    height: 100%;
+    padding: 28px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    border-top: 3px solid #4FC3F7;
+    transition: 0.2s ease;
+}
+
+    .simple-card:hover {
+        border-color: #4FC3F7;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.07);
+    }
+
+    .simple-card h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .simple-card p {
+        color: #666666;
+        font-size: 0.9rem;
+        line-height: 1.7;
+        margin-bottom: 0;
+    }
+
+
+/* ---------- SIMPLE CTA ---------- */
+
+.simple-cta {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 55px 0;
+    text-align: center;
+}
+
+    .simple-cta h2 {
+        font-size: 2rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .simple-cta p {
+        color: #dddddd;
+        font-size: 0.95rem;
+    }
+
+.cta-button {
+    display: inline-block;
+    background-color: #4FC3F7;
+    color: #111111;
+    padding: 11px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+    .cta-button:hover {
+        background-color: #ffffff;
+        color: #111111;
+    }
+
+
+/* ---------- GENERAL PAGE HEADER ---------- */
+
+.page-header {
+    background-color: #4FC3F7;
+    padding: 50px 0;
+    text-align: center;
+}
+
+    .page-header h1 {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: #111111;
+        margin-bottom: 8px;
+    }
+
+    .page-header p {
+        color: #222222;
+        font-size: 0.95rem;
+        margin: 0 auto;
+    }
+
+
+/* ---------- GENERAL PAGE CONTENT ---------- */
+
+.page-content {
+    padding: 60px 0;
+}
+
+.content-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    padding: 30px;
+}
+
+    .content-card h2 {
+        font-size: 1.7rem;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .content-card p {
+        color: #555555;
+        font-size: 0.92rem;
+        line-height: 1.8;
+    }
+
+
+/* ---------- FORMS ---------- */
+
+.form-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.form-control,
+.form-select {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+}
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: #4FC3F7;
+        box-shadow: 0 0 0 0.15rem rgba(79, 195, 247, 0.2);
+    }
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #222222;
+}
+
+.primary-button {
+    background-color: #0288D1;
+    color: #ffffff;
+    border: none;
+    padding: 11px 24px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+    .primary-button:hover {
+        background-color: #111111;
+    }
+
+
+/* ---------- FOOTER ---------- */
+
+.site-footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 40px 0 25px;
+}
+
+    .site-footer h5 {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+    }
+
+    .site-footer p {
+        color: #bbbbbb;
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    .site-footer a {
+        color: #4FC3F7;
+        font-size: 0.85rem;
+    }
+
+        .site-footer a:hover {
+            color: #ffffff;
+        }
+
+
+/* ---------- BOOTSTRAP PRIMARY BUTTON ---------- */
+
+.btn-primary {
+    background-color: #0288D1;
+    border-color: #0288D1;
+    font-weight: 500;
+}
+
+    .btn-primary:hover {
+        background-color: #111111;
+        border-color: #111111;
+    }
+
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 991px) {
+
+    .nav-link {
+        margin-left: 0;
+        padding: 9px 0;
+    }
+
+    .login-link {
+        border-left: none;
+        padding-left: 0 !important;
+    }
+
+    .register-btn {
+        display: inline-block;
+        margin-left: 0;
+        margin-top: 8px;
+    }
+
+    .hero-section {
+        padding: 65px 0;
+    }
+
+        .hero-section h1 {
+            font-size: 2.7rem;
+        }
+}
+
+
+@media (max-width: 576px) {
+
+    .hero-section {
+        padding: 55px 0;
+    }
+
+        .hero-section h1 {
+            font-size: 2.2rem;
+        }
+
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    .section-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .simple-cta h2 {
+        font-size: 1.7rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+}
+
+.content-card h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-top: 25px;
+}
+
+.content-card h5 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #0288D1;
+}
+
+.content-card hr {
+    margin: 35px 0;
+    border-color: #dddddd;
+}
+
+/* =========================================
+   DONATION PAGE
+   ========================================= */
+
+.donor-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.donor-option {
+    padding: 25px;
+    background-color: #f5fafd;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #4FC3F7;
+}
+
+    .donor-option h5 {
+        font-size: 1.05rem;
+        font-weight: 500;
+        color: #111111;
+        margin-bottom: 10px;
+    }
+
+    .donor-option p {
+        font-size: 0.88rem;
+        color: #666666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+.secondary-button {
+    display: inline-block;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 11px 20px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 4px;
+}
+
+    .secondary-button:hover {
+        background-color: #0288D1;
+        color: #ffffff;
+    }
+
+.content-card h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 576px) {
+
+    .donor-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   VOLUNTEER PAGE
+   ========================================= */
+
+.content-card form {
+    margin-top: 25px;
+}
+
+    .content-card form .primary-button {
+        cursor: pointer;
+    }
+
+        .content-card form .primary-button:hover {
+            background-color: #111111;
+        }
+
+/* =========================================
+   CONTACT PAGE
+   ========================================= */
+
+.contact-item {
+    border-left: 3px solid #4FC3F7;
+    padding-left: 15px;
+    margin-top: 25px;
+}
+
+    .contact-item h5 {
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: #0288D1;
+        margin-bottom: 5px;
+    }
+
+    .contact-item p {
+        margin-bottom: 0;
+        color: #555555;
+        font-size: 0.9rem;
+    }
+
+
+/* ==========================================
+   DONOR PANEL LAYOUT
+   Yellow | White | Black
+   ========================================== */
+
+.donor-layout {
+    margin: 0;
+    background-color: #f7f7f7;
+    color: #111111;
+}
+
+
+/* ==========================================
+   DONOR NAVBAR
+   ========================================== */
+
+.donor-navbar {
+    background-color: #ffffff;
+    border-bottom: 3px solid #F4C430;
+}
+
+.donor-navbar-container {
+    max-width: 1200px;
+    min-height: 76px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ==========================================
+   DONOR BRAND
+   ========================================== */
+
+.donor-brand {
+    text-decoration: none;
+    color: #111111;
+}
+
+    .donor-brand:hover {
+        color: #111111;
+    }
+
+.donor-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.donor-logo-title {
+    color: #111111;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.donor-logo-subtitle {
+    margin-top: 4px;
+    color: #B08A00;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+
+/* ==========================================
+   DONOR NAVIGATION
+   ========================================== */
+
+.donor-navigation {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.donor-nav-link {
+    color: #111111;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+    .donor-nav-link:hover {
+        background-color: #F4C430;
+        color: #111111;
+    }
+
+
+/* ==========================================
+   LOGOUT
+   ========================================== */
+
+.donor-logout-form {
+    margin: 0 0 0 5px;
+}
+
+.donor-logout-button {
+    border: none;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+    .donor-logout-button:hover {
+        background-color: #F4C430;
+        color: #111111;
+    }
+
+
+/* ==========================================
+   MOBILE MENU
+   ========================================== */
+
+.donor-menu-button {
+    display: none;
+    width: 42px;
+    height: 38px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff;
+    border-radius: 4px;
+}
+
+
+/* ==========================================
+   DONOR WELCOME
+   ========================================== */
+
+.donor-welcome {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 45px 0;
+}
+
+    .donor-welcome h1 {
+        color: #111111;
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 5px 0 8px;
+    }
+
+    .donor-welcome p {
+        color: #666666;
+        font-size: 0.92rem;
+        margin-bottom: 0;
+    }
+
+.donor-small-title {
+    color: #8A6D00;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    margin-bottom: 5px;
+}
+
+
+/* ==========================================
+   DASHBOARD CONTENT
+   ========================================== */
+
+.donor-dashboard-content {
+    padding: 45px 0 60px;
+}
+
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.donor-stat-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #F4C430;
+    padding: 25px;
+}
+
+    .donor-stat-card span {
+        color: #8A6D00;
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+    }
+
+    .donor-stat-card h2 {
+        color: #111111;
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 12px 0 3px;
+    }
+
+    .donor-stat-card p {
+        color: #777777;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   DONATION ACTION
+   ========================================== */
+
+.donor-action-card {
+    margin-top: 30px;
+    padding: 35px;
+    background-color: #111111;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .donor-action-card h2 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+    }
+
+    .donor-action-card p {
+        color: #cccccc;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+        max-width: 600px;
+    }
+
+    .donor-action-card .donor-small-title {
+        color: #F4C430;
+    }
+
+
+/* ==========================================
+   DONATE BUTTON
+   ========================================== */
+
+.donor-yellow-button {
+    display: inline-block;
+    background-color: #F4C430;
+    color: #111111;
+    padding: 11px 22px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+    .donor-yellow-button:hover {
+        background-color: #ffffff;
+        color: #111111;
+    }
+
+
+/* ==========================================
+   ACCOUNT
+   ========================================== */
+
+.donor-account-card {
+    margin-top: 20px;
+    padding: 25px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .donor-account-card h2 {
+        color: #111111;
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 5px;
+    }
+
+    .donor-account-card p {
+        color: #777777;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   MANAGE PROFILE
+   ========================================== */
+
+.donor-outline-button {
+    display: inline-block;
+    border: 1px solid #111111;
+    color: #111111;
+    padding: 9px 18px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85rem;
+}
+
+    .donor-outline-button:hover {
+        background-color: #F4C430;
+        border-color: #F4C430;
+        color: #111111;
+    }
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.donor-footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 20px 0;
+    font-size: 0.8rem;
+}
+
+    .donor-footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .donor-navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .donor-menu-button {
+        display: block;
+    }
+
+    .donor-navigation {
+        width: 100%;
+        display: none;
+        padding: 15px 0;
+    }
+
+        .donor-navigation.show {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+    .donor-nav-link {
+        width: 100%;
+    }
+
+    .donor-logout-form {
+        margin: 5px 0 0;
+    }
+
+    .donor-logout-button {
+        width: 100%;
+    }
+
+    .donor-action-card {
+        display: block;
+    }
+
+    .donor-yellow-button {
+        margin-top: 20px;
+    }
+
+    .donor-account-card {
+        display: block;
+    }
+
+    .donor-outline-button {
+        margin-top: 15px;
+    }
+
+    .donor-footer .container {
+        display: block;
+    }
+}
+
+/* ==========================================
+   DONOR NAVIGATION FIX
+   ========================================== */
+
+/* Desktop */
+
+.donor-navigation.collapse {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.donor-navigation .donor-nav-link {
+    display: inline-block;
+}
+
+.donor-navigation .donor-logout-form {
+    display: block;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .donor-navigation.collapse:not(.show) {
+        display: none;
+    }
+
+    .donor-navigation.collapse.show {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .donor-navigation .donor-nav-link {
+        width: 100%;
+    }
+
+    .donor-navigation .donor-logout-form {
+        width: 100%;
+    }
+
+    .donor-navigation .donor-logout-button {
+        width: 100%;
+    }
+}
+
+/* ==========================================
+   DONOR PROFILE PAGE
+   ========================================== */
+
+.donor-profile-page {
+    background-color: #f7f7f7;
+    min-height: calc(100vh - 76px);
+}
+
+
+/* ==========================================
+   PROFILE SECTION
+   ========================================== */
+
+.donor-profile-section {
+    padding: 50px 0 70px;
+}
+
+
+/* ==========================================
+   PROFILE HEADING
+   ========================================== */
+
+.donor-profile-heading {
+    max-width: 800px;
+    margin-bottom: 30px;
+}
+
+    .donor-profile-heading h1 {
+        color: #111111;
+        font-size: 2rem;
+        font-weight: 400;
+        margin: 5px 0 8px;
+    }
+
+    .donor-profile-heading > p:last-child {
+        color: #666666;
+        font-size: 0.92rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   PROFILE CARD
+   ========================================== */
+
+.donor-profile-card {
+    max-width: 800px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #F4C430;
+    padding: 35px;
+}
+
+
+/* ==========================================
+   CARD HEADER
+   ========================================== */
+
+.donor-profile-card-header {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+    .donor-profile-card-header h2 {
+        color: #111111;
+        font-size: 1.3rem;
+        font-weight: 400;
+        margin-bottom: 6px;
+    }
+
+    .donor-profile-card-header p {
+        color: #777777;
+        font-size: 0.88rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   PROFILE FIELDS
+   ========================================== */
+
+.donor-profile-field {
+    margin-bottom: 22px;
+}
+
+    .donor-profile-field label {
+        display: block;
+        color: #222222;
+        font-size: 0.88rem;
+        font-weight: 500;
+        margin-bottom: 7px;
+    }
+
+    .donor-profile-field .form-control {
+        padding: 11px 12px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        font-size: 0.9rem;
+    }
+
+        .donor-profile-field .form-control:focus {
+            border-color: #F4C430;
+            box-shadow: 0 0 0 0.15rem rgba(244, 196, 48, 0.2);
+        }
+
+
+/* ==========================================
+   ACCOUNT TYPE
+   ========================================== */
+
+.donor-account-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 11px 12px;
+    background-color: #f8f8f8;
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+}
+
+    .donor-account-type span {
+        color: #111111;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .donor-account-type small {
+        color: #777777;
+        font-size: 0.8rem;
+    }
+
+
+/* ==========================================
+   SUCCESS MESSAGE
+   ========================================== */
+
+.donor-success {
+    background-color: #fff8d6;
+    border-left: 4px solid #F4C430;
+    color: #6B5600;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    font-size: 0.88rem;
+}
+
+
+/* ==========================================
+   PROFILE ACTIONS
+   ========================================== */
+
+.donor-profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 10px;
+}
+
+
+/* Back button */
+
+.donor-profile-back {
+    color: #111111;
+    border: 1px solid #111111;
+    padding: 10px 18px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+    .donor-profile-back:hover {
+        background-color: #111111;
+        color: #ffffff;
+    }
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 576px) {
+
+    .donor-profile-section {
+        padding: 35px 0 50px;
+    }
+
+    .donor-profile-card {
+        padding: 25px 20px;
+    }
+
+    .donor-profile-actions {
+        display: block;
+    }
+
+        .donor-profile-actions .donor-yellow-button {
+            width: 100%;
+            text-align: center;
+        }
+
+    .donor-profile-back {
+        display: block;
+        text-align: center;
+        margin-top: 12px;
+    }
+
+    .donor-account-type {
+        display: block;
+    }
+
+        .donor-account-type small {
+            display: block;
+            margin-top: 3px;
+        }
+}
+
+
+/* ==========================================
+   EMPLOYEE PORTAL
+   Green | White | Black
+   ========================================== */
+
+.employee-layout {
+    margin: 0;
+    background-color: #f7f8f7;
+    color: #111111;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* ==========================================
+   EMPLOYEE NAVBAR
+   ========================================== */
+
+.employee-navbar {
+    background-color: #ffffff;
+    border-bottom: 3px solid #198754;
+    width: 100%;
+}
+
+.employee-navbar-container {
+    max-width: 1200px;
+    min-height: 78px;
+    margin: 0 auto;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* ==========================================
+   BRAND
+   ========================================== */
+
+.employee-brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+}
+
+    .employee-brand:hover {
+        text-decoration: none;
+    }
+
+.employee-brand-title {
+    color: #111111;
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.employee-brand-subtitle {
+    color: #198754;
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-top: 3px;
+}
+
+
+/* ==========================================
+   NAVIGATION
+   ========================================== */
+
+.employee-navigation {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.employee-nav-link {
+    color: #111111;
+    text-decoration: none;
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: 0.2s ease;
+}
+
+    .employee-nav-link:hover {
+        background-color: #198754;
+        color: #ffffff;
+    }
+
+
+/* ==========================================
+   LOGOUT
+   ========================================== */
+
+.employee-logout-form {
+    margin-left: 8px;
+}
+
+.employee-logout {
+    border: none;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 10px 17px;
+    border-radius: 4px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+    .employee-logout:hover {
+        background-color: #198754;
+    }
+
+
+/* ==========================================
+   MOBILE MENU BUTTON
+   ========================================== */
+
+.employee-menu-button {
+    display: none;
+    border: none;
+    background-color: #111111;
+    color: #ffffff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+/* ==========================================
+   EMPLOYEE PAGE HEADER
+   ========================================== */
+
+.employee-page-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 45px 0;
+}
+
+    .employee-page-header h1 {
+        color: #111111;
+        font-size: 2rem;
+        font-weight: 500;
+        margin: 5px 0 8px;
+    }
+
+    .employee-page-header p {
+        color: #666666;
+        font-size: 0.92rem;
+        margin: 0;
+    }
+
+.employee-small-title {
+    color: #198754 !important;
+    font-size: 0.72rem !important;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+
+/* ==========================================
+   EMPLOYEE DASHBOARD
+   ========================================== */
+
+.employee-page {
+    min-height: calc(100vh - 78px);
+    background-color: #f7f8f7;
+}
+
+
+/* ==========================================
+   DASHBOARD HEADER
+   ========================================== */
+
+.employee-dashboard-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 50px 0;
+}
+
+    .employee-dashboard-header h1 {
+        color: #111111;
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin: 8px 0;
+    }
+
+    .employee-dashboard-header p {
+        color: #666666;
+        font-size: 0.92rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   CONTENT
+   ========================================== */
+
+.employee-content {
+    padding: 45px 0 60px;
+}
+
+
+/* ==========================================
+   STAT CARDS
+   ========================================== */
+
+.employee-stat-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #198754;
+    padding: 25px;
+    height: 100%;
+}
+
+    .employee-stat-card span {
+        color: #198754;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .employee-stat-card h2 {
+        color: #111111;
+        font-size: 2.2rem;
+        font-weight: 500;
+        margin: 12px 0 3px;
+    }
+
+    .employee-stat-card p {
+        color: #777777;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   PANEL CARD
+   ========================================== */
+
+.employee-panel-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #198754;
+    padding: 30px;
+}
+
+    .employee-panel-card h2 {
+        color: #111111;
+        font-size: 1.35rem;
+        font-weight: 500;
+        margin-bottom: 8px;
+    }
+
+    .employee-panel-card p {
+        color: #666666;
+        font-size: 0.9rem;
+        line-height: 1.7;
+    }
+
+
+/* ==========================================
+   GREEN BUTTON
+   ========================================== */
+
+.employee-green-button {
+    display: inline-block;
+    background-color: #198754;
+    color: #ffffff;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .employee-green-button:hover {
+        background-color: #111111;
+        color: #ffffff;
+    }
+
+
+/* ==========================================
+   QUICK ACTION
+   ========================================== */
+
+.employee-quick-action {
+    display: block;
+    background-color: #ffffff;
+    color: #111111;
+    border: 1px solid #dddddd;
+    padding: 18px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+    .employee-quick-action:hover {
+        background-color: #198754;
+        border-color: #198754;
+        color: #ffffff;
+    }
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.employee-footer {
+    background-color: #111111;
+    color: #ffffff;
+    padding: 22px 0;
+    font-size: 0.8rem;
+}
+
+    .employee-footer .container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 900px) {
+
+    .employee-menu-button {
+        display: block;
+    }
+
+    .employee-navbar-container {
+        flex-wrap: wrap;
+    }
+
+    .employee-navigation {
+        display: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+        .employee-navigation.show {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+    .employee-nav-link {
+        display: block;
+        width: 100%;
+    }
+
+    .employee-logout-form {
+        margin: 5px 0 0;
+    }
+
+    .employee-logout {
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .employee-navbar-container {
+        padding: 0 15px;
+    }
+
+    .employee-dashboard-header {
+        padding: 35px 0;
+    }
+
+        .employee-dashboard-header h1 {
+            font-size: 1.8rem;
+        }
+
+    .employee-content {
+        padding: 35px 0 45px;
+    }
+
+    .employee-footer .container {
+        display: block;
+    }
+
+    .employee-footer span {
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+/* ==========================================
+   CLEAN EMPLOYEE DASHBOARD
+   Green | White | Black
+   ========================================== */
+
+.employee-dashboard-header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dddddd;
+    padding: 45px 0;
+}
+
+    .employee-dashboard-header h1 {
+        color: #111111;
+        font-size: 2.1rem;
+        font-weight: 500;
+        margin: 5px 0 8px;
+    }
+
+    .employee-dashboard-header p:last-child {
+        color: #666666;
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   DASHBOARD CONTENT
+   ========================================== */
+
+.employee-content {
+    padding: 40px 0 60px;
+}
+
+
+/* ==========================================
+   STATISTICS
+   ========================================== */
+
+.employee-stat-card {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-top: 3px solid #198754;
+    padding: 24px;
+    height: 100%;
+}
+
+    .employee-stat-card span {
+        color: #198754;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 1.2px;
+    }
+
+    .employee-stat-card h2 {
+        color: #111111;
+        font-size: 2.1rem;
+        font-weight: 500;
+        margin: 10px 0 2px;
+    }
+
+    .employee-stat-card p {
+        color: #777777;
+        font-size: 0.82rem;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   QUICK ACTIONS
+   ========================================== */
+
+.employee-dashboard-actions {
+    margin-top: 35px;
+}
+
+.employee-section-heading {
+    margin-bottom: 18px;
+}
+
+    .employee-section-heading h2 {
+        color: #111111;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0;
+    }
+
+
+/* ==========================================
+   DASHBOARD CARDS
+   ========================================== */
+
+.employee-dashboard-card {
+    display: block;
+    height: 100%;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    padding: 25px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+    .employee-dashboard-card:hover {
+        border-color: #198754;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+        transform: translateY(-2px);
+    }
+
+
+/* ==========================================
+   CARD ICON
+   ========================================== */
+
+.employee-dashboard-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #198754;
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-radius: 4px;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   CARD TEXT
+   ========================================== */
+
+.employee-dashboard-card h3 {
+    color: #111111;
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 7px;
+}
+
+.employee-dashboard-card p {
+    color: #777777;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   CARD LINK
+   ========================================== */
+
+.employee-card-link {
+    color: #198754;
+    font-size: 0.82rem;
+    font-weight: 500;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 576px) {
+
+    .employee-dashboard-header {
+        padding: 35px 0;
+    }
+
+        .employee-dashboard-header h1 {
+            font-size: 1.75rem;
+        }
+
+    .employee-content {
+        padding: 30px 0 45px;
+    }
+
+    .employee-dashboard-actions {
+        margin-top: 30px;
+    }
+}
+
+/* =========================================================
+   RESET PASSWORD PAGE
+   ========================================================= */
+
+.reset-password-page {
+    min-height: 100vh !important;
+    background-color: #f5f5f5 !important;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.reset-container {
+    width: 100% !important;
+    max-width: 1140px !important;
+    margin: 0 auto !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.reset-password-header {
+    background-color: #111111 !important;
+    color: #ffffff !important;
+    padding: 55px 0 50px !important;
+    text-align: center !important;
+}
+
+
+.reset-brand {
+    color: #f5c400 !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    margin: 0 0 18px 0 !important;
+}
+
+
+.reset-small-title {
+    color: #f5c400 !important;
+    font-size: 12px !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    margin: 0 0 10px 0 !important;
+}
+
+
+.reset-password-header h1 {
+    color: #ffffff !important;
+    font-size: 42px !important;
+    font-weight: 700 !important;
+    margin: 0 0 12px 0 !important;
+}
+
+
+.reset-header-text {
+    color: #dddddd !important;
+    font-size: 16px !important;
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.reset-password-content {
+    padding: 60px 20px 80px !important;
+    background-color: #f5f5f5 !important;
+}
+
+
+/* =========================================================
+   WRAPPER
+   ========================================================= */
+
+.reset-password-wrapper {
+    width: 100% !important;
+    max-width: 560px !important;
+    margin: 0 auto !important;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.reset-password-card {
+    width: 100% !important;
+    background-color: #ffffff !important;
+    border: 1px solid #e3e3e3 !important;
+    border-radius: 14px !important;
+    padding: 42px !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================================
+   CARD HEADER
+   ========================================================= */
+
+.reset-password-card-header {
+    text-align: center !important;
+    margin-bottom: 32px !important;
+}
+
+
+.reset-lock-icon {
+    width: 64px !important;
+    height: 64px !important;
+    margin: 0 auto 18px auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: #fff4c7 !important;
+    border-radius: 50% !important;
+    font-size: 27px !important;
+}
+
+
+.reset-password-card-header h2 {
+    color: #111111 !important;
+    font-size: 27px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+}
+
+
+.reset-password-card-header p {
+    color: #777777 !important;
+    font-size: 15px !important;
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.reset-form-group {
+    width: 100% !important;
+    margin-bottom: 22px !important;
+}
+
+
+.reset-form-label {
+    display: block !important;
+    color: #222222 !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    margin-bottom: 8px !important;
+}
+
+
+/* =========================================================
+   INPUTS
+   ========================================================= */
+
+.reset-password-page input.reset-form-control {
+    display: block !important;
+    width: 100% !important;
+    height: 52px !important;
+    padding: 12px 15px !important;
+    background-color: #ffffff !important;
+    border: 1px solid #d4d4d4 !important;
+    border-radius: 8px !important;
+    color: #222222 !important;
+    font-size: 15px !important;
+    box-sizing: border-box !important;
+}
+
+
+    .reset-password-page input.reset-form-control:focus {
+        outline: none !important;
+        border-color: #f5c400 !important;
+        box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.15) !important;
+    }
+
+
+    .reset-password-page input.reset-form-control::placeholder {
+        color: #999999 !important;
+    }
+
+
+/* =========================================================
+   PASSWORD REQUIREMENTS
+   ========================================================= */
+
+.reset-password-info {
+    background-color: #fff9df !important;
+    border-left: 4px solid #f5c400 !important;
+    border-radius: 6px !important;
+    padding: 16px 18px !important;
+    margin: 25px 0 !important;
+    color: #555555 !important;
+    font-size: 14px !important;
+}
+
+
+.reset-info-title {
+    color: #222222 !important;
+    font-weight: 700 !important;
+    margin-bottom: 8px !important;
+}
+
+
+.reset-password-info ul {
+    margin: 0 !important;
+    padding-left: 20px !important;
+}
+
+
+.reset-password-info li {
+    margin-bottom: 4px !important;
+}
+
+
+    .reset-password-info li:last-child {
+        margin-bottom: 0 !important;
+    }
+
+
+/* =========================================================
+   RESET BUTTON
+   ========================================================= */
+
+.reset-password-page .reset-password-button {
+    display: block !important;
+    width: 100% !important;
+    height: 52px !important;
+    padding: 0 20px !important;
+    border: none !important;
+    border-radius: 8px !important;
+    background-color: #f5c400 !important;
+    color: #111111 !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+}
+
+
+    .reset-password-page .reset-password-button:hover {
+        background-color: #e0b300 !important;
+        color: #111111 !important;
+        transform: translateY(-1px) !important;
+    }
+
+
+    .reset-password-page .reset-password-button:active {
+        background-color: #d4a900 !important;
+        transform: translateY(0) !important;
+    }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.reset-password-footer {
+    text-align: center !important;
+    margin-top: 28px !important;
+    padding-top: 24px !important;
+    border-top: 1px solid #eeeeee !important;
+    font-size: 14px !important;
+}
+
+
+    .reset-password-footer span {
+        color: #777777 !important;
+        margin-right: 5px !important;
+    }
+
+
+    .reset-password-footer a {
+        color: #111111 !important;
+        font-weight: 700 !important;
+        text-decoration: none !important;
+    }
+
+
+        .reset-password-footer a:hover {
+            color: #c39f00 !important;
+            text-decoration: underline !important;
+        }
+
+
+/* =========================================================
+   VALIDATION
+   ========================================================= */
+
+.reset-validation {
+    color: #dc3545 !important;
+    font-size: 14px !important;
+    margin-bottom: 20px !important;
+}
+
+
+.reset-field-error {
+    display: block !important;
+    color: #dc3545 !important;
+    font-size: 13px !important;
+    margin-top: 6px !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 576px) {
+
+    .reset-password-header {
+        padding: 40px 0 !important;
+    }
+
+
+        .reset-password-header h1 {
+            font-size: 32px !important;
+        }
+
+
+    .reset-password-content {
+        padding: 35px 15px 60px !important;
+    }
+
+
+    .reset-password-card {
+        padding: 28px 22px !important;
+        border-radius: 10px !important;
+    }
+
+
+    .reset-password-card-header h2 {
+        font-size: 23px !important;
+    }
+
+
+    .reset-password-footer span {
+        display: block !important;
+        margin-right: 0 !important;
+        margin-bottom: 6px !important;
+    }
+}
+
+/* ==========================================
+   AUTHENTICATION PAGES
+   ========================================== */
+
+.auth-page {
+    background: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* ==========================================
+   HEADER
+   ========================================== */
+
+.auth-header {
+    background: #ffffff;
+    padding: 60px 0 45px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.auth-small-title {
+    color: #111111;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.auth-header h1 {
+    color: #111111;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.auth-header p {
+    color: #555555;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+
+/* ==========================================
+   CONTENT
+   ========================================== */
+
+.auth-content {
+    background: #f7f7f7;
+    padding: 60px 0;
+    min-height: 600px;
+}
+
+.auth-form-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================
+   CARD
+   ========================================== */
+
+.auth-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card-header {
+    margin-bottom: 30px;
+}
+
+    .auth-card-header h2 {
+        color: #111111;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .auth-card-header p {
+        color: #666666;
+        margin-bottom: 0;
+    }
+
+
+/* ==========================================
+   FORM
+   ========================================== */
+
+.auth-card .form-label {
+    color: #111111;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.auth-card .form-control {
+    min-height: 52px;
+    border: 1px solid #d5d5d5;
+    border-radius: 7px;
+    padding: 12px 15px;
+    font-size: 15px;
+}
+
+    .auth-card .form-control:focus {
+        border-color: #f5c400;
+        box-shadow: 0 0 0 3px rgba(245, 196, 0, 0.15);
+    }
+
+
+/* ==========================================
+   PASSWORD REQUIREMENTS
+   ========================================== */
+
+.password-requirements {
+    background: #fafafa;
+    border-left: 4px solid #f5c400;
+    padding: 18px 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+    .password-requirements strong {
+        display: block;
+        color: #111111;
+        margin-bottom: 8px;
+    }
+
+    .password-requirements ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+
+    .password-requirements li {
+        color: #555555;
+        margin-bottom: 5px;
+    }
+
+
+/* ==========================================
+   YELLOW BUTTON
+   ========================================== */
+
+.auth-yellow-button {
+    width: 100%;
+    border: none;
+    border-radius: 7px;
+    background: #f5c400;
+    color: #111111;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+    .auth-yellow-button:hover {
+        background: #e0b300;
+        color: #111111;
+    }
+
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+
+.auth-footer {
+    border-top: 1px solid #eeeeee;
+    margin-top: 30px;
+    padding-top: 25px;
+    text-align: center;
+}
+
+    .auth-footer p {
+        color: #666666;
+        margin-bottom: 0;
+    }
+
+    .auth-footer a {
+        color: #111111;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .auth-footer a:hover {
+            color: #c49a00;
+        }
+
+
+/* ==========================================
+   VALIDATION
+   ========================================== */
+
+.text-danger {
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 768px) {
+
+    .auth-header {
+        padding: 40px 0 30px;
+    }
+
+        .auth-header h1 {
+            font-size: 32px;
+        }
+
+    .auth-content {
+        padding: 35px 15px;
+    }
+
+    .auth-card {
+        padding: 25px;
+    }
+
+    .auth-card-header h2 {
+        font-size: 24px;
+    }
+}
+
+/* =========================================
+   MOBILE SIDE MENU
+   ========================================= */
+
+@media (max-width: 991.98px) {
+
+    /* Hamburger button */
+
+    .navbar-toggler {
+        border: none;
+        padding: 8px;
+        width: 44px;
+        height: 44px;
+        background: transparent;
+        position: relative;
+        z-index: 1051;
+    }
+
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+
+
+    /* Three black hamburger lines */
+
+    .navbar-toggler-icon {
+        background-image: none !important;
+        width: 26px;
+        height: 20px;
+        display: block;
+        position: relative;
+        border-top: 3px solid #000;
+        border-bottom: 3px solid #000;
+    }
+
+        .navbar-toggler-icon::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            width: 26px;
+            height: 3px;
+            background-color: #000;
+        }
+
+
+    /* =========================================
+       SIDE MENU
+       ========================================= */
+
+    .navbar-collapse {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 280px;
+        height: 100vh;
+        background-color: #ffffff;
+        padding: 90px 25px 30px 25px;
+        margin: 0;
+        overflow-y: auto;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1050;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15);
+    }
+
+
+        /* Show menu from LEFT */
+
+        .navbar-collapse.show {
+            transform: translateX(0);
+        }
+
+
+    /* Navigation list */
+
+    .navbar-nav {
+        width: 100%;
+        align-items: stretch !important;
+    }
+
+
+        .navbar-nav .nav-item {
+            width: 100%;
+            margin: 0 !important;
+        }
+
+
+        /* Menu links */
+
+        .navbar-nav .nav-link {
+            display: block;
+            width: 100%;
+            padding: 14px 5px;
+            font-size: 15px;
+            color: #000000;
+            border-bottom: 1px solid #eeeeee;
+        }
+
+
+            .navbar-nav .nav-link:hover {
+                background-color: #f5f5f5;
+            }
+
+
+        /* Login */
+
+        .navbar-nav .login-link {
+            margin-left: 0 !important;
+            margin-top: 10px;
+        }
+
+
+        /* Register */
+
+        .navbar-nav .register-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 12px;
+            padding: 10px 15px;
+        }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 575.98px) {
+
+    .navbar-collapse {
+        width: 260px;
+    }
+
+    .navbar-brand {
+        max-width: 70%;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .brand-tagline {
+        font-size: 8px;
+    }
+}
+
+/* ==========================================
+   EMPLOYEE MOBILE MENU BUTTON
+   ========================================== */
+
+.employee-menu-button {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    width: 45px;
+    height: 45px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+
+    .employee-menu-button span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        margin: 5px auto;
+        background: black;
+        border-radius: 2px;
+    }
+
+
+/* ==========================================
+   MOBILE OVERLAY
+   ========================================== */
+
+.employee-menu-overlay {
+    display: none;
+}
+
+
+/* ==========================================
+   CLOSE BUTTON
+   ========================================== */
+
+.employee-menu-close {
+    display: none;
+}
+
+
+/* ==========================================
+   MOBILE SIDEBAR
+   ========================================== */
+
+@media (max-width: 991px) {
+
+    .employee-menu-button {
+        display: block;
+    }
+
+
+    .employee-navigation {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1200;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+
+        .employee-navigation.show {
+            left: 0;
+        }
+
+
+    /* ==========================================
+       CLOSE BUTTON
+       ========================================== */
+
+    .employee-menu-close {
+        display: block;
+        align-self: flex-end;
+        margin: 5px 20px 15px 0;
+        border: none;
+        background: transparent;
+        font-size: 32px;
+        line-height: 1;
+        color: black;
+        cursor: pointer;
+    }
+
+
+    /* ==========================================
+       SIDEBAR LINKS
+       ========================================== */
+
+    .employee-nav-link {
+        display: block;
+        width: 100%;
+        padding: 16px 25px;
+        color: #222;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid #eee;
+    }
+
+
+        .employee-nav-link:hover {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+
+    /* ==========================================
+       LOGOUT
+       ========================================== */
+
+    .employee-logout-form {
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .employee-logout {
+        width: 100%;
+        padding: 16px 25px;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #eee;
+        background: white;
+        color: #222;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+
+        .employee-logout:hover {
+            background: #f5f5f5;
+        }
+
+
+    /* ==========================================
+       OVERLAY
+       ========================================== */
+
+    .employee-menu-overlay.show {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1150;
+    }
+
+
+    /* ==========================================
+       PREVENT PAGE SCROLLING
+       ========================================== */
+
+    body.employee-menu-open {
+        overflow: hidden;
+    }
+}
+
+/* ==========================================
+   DONOR MOBILE MENU BUTTON
+   ========================================== */
+
+.donor-menu-button {
+    display: none;
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    width: 45px;
+    height: 45px;
+    padding: 8px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+
+    .donor-menu-button span {
+        display: block;
+        width: 26px;
+        height: 3px;
+        margin: 5px auto;
+        background: black;
+        border-radius: 2px;
+    }
+
+
+/* ==========================================
+   DONOR MOBILE OVERLAY
+   ========================================== */
+
+.donor-menu-overlay {
+    display: none;
+}
+
+
+/* ==========================================
+   DONOR CLOSE BUTTON
+   ========================================== */
+
+.donor-menu-close {
+    display: none;
+}
+
+
+/* ==========================================
+   DONOR MOBILE SIDEBAR
+   ========================================== */
+
+@media (max-width: 991px) {
+
+    .donor-menu-button {
+        display: block;
+    }
+
+
+    .donor-navigation {
+        position: fixed;
+        top: 0;
+        left: -300px;
+        width: 280px;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        padding-top: 20px;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+        z-index: 1200;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+
+
+        .donor-navigation.show {
+            left: 0;
+        }
+
+
+    /* ==========================================
+       CLOSE BUTTON
+       ========================================== */
+
+    .donor-menu-close {
+        display: block;
+        align-self: flex-end;
+        margin: 5px 20px 15px 0;
+        border: none;
+        background: transparent;
+        font-size: 32px;
+        line-height: 1;
+        color: black;
+        cursor: pointer;
+    }
+
+
+    /* ==========================================
+       DONOR LINKS
+       ========================================== */
+
+    .donor-nav-link {
+        display: block;
+        width: 100%;
+        padding: 16px 25px;
+        color: #222;
+        text-decoration: none;
+        font-weight: 500;
+        border-bottom: 1px solid #eee;
+    }
+
+
+        .donor-nav-link:hover {
+            background: #f5f5f5;
+            color: #222;
+        }
+
+
+    /* ==========================================
+       DONOR LOGOUT
+       ========================================== */
+
+    .donor-logout-form {
+        width: 100%;
+        margin: 0;
+    }
+
+
+    .donor-logout-button {
+        width: 100%;
+        padding: 16px 25px;
+        text-align: left;
+        border: none;
+        border-bottom: 1px solid #eee;
+        background: white;
+        color: #222;
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+
+        .donor-logout-button:hover {
+            background: #f5f5f5;
+        }
+
+
+    /* ==========================================
+       OVERLAY
+       ========================================== */
+
+    .donor-menu-overlay.show {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1150;
+    }
+
+
+    /* ==========================================
+       PREVENT PAGE SCROLLING
+       ========================================== */
+
+    body.donor-menu-open {
+        overflow: hidden;
+    }
+}

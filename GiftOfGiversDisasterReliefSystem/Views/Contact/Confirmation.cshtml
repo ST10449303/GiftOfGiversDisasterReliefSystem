@@ -1,0 +1,55 @@
+﻿@{
+    ViewData["Title"] = "Message Sent";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+            <div class="card border-0 shadow-sm text-center">
+
+                <div class="card-body p-5">
+
+                    <div class="display-3 mb-3">
+                        💬
+                    </div>
+
+                    <h1 class="fw-bold text-success">
+                        Message Sent!
+                    </h1>
+
+                    <p class="lead">
+                        Thank you, @ViewBag.Name.
+                        Your message has been received.
+                    </p>
+
+                    <div class="alert alert-info mt-4">
+
+                        <strong>Prototype Notice</strong>
+
+                        <p class="mb-0 mt-2">
+                            In the full system, your message would
+                            be sent to the Gift Of Givers support team.
+                        </p>
+
+                    </div>
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="btn btn-danger">
+
+                        Return Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

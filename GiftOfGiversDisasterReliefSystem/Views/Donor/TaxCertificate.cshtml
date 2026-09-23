@@ -1,0 +1,229 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.Donation
+
+@{
+    ViewData["Title"] = "Tax Certificate";
+}
+
+<div class="donor-dashboard">
+
+    <section class="donor-welcome">
+
+        <div class="container">
+
+            <p class="donor-small-title">
+                TAX CERTIFICATE
+            </p>
+
+            <h1>
+                Donation Tax Certificate
+            </h1>
+
+            <p>
+                Thank you for supporting disaster relief
+                and communities in need.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="donor-dashboard-content">
+
+        <div class="container">
+
+            <div class="donor-panel-card">
+
+                <div class="text-center mb-4">
+
+                    <h2>
+                        GIFT OF THE GIVERS
+                    </h2>
+
+                    <p>
+                        DISASTER RELIEF
+                    </p>
+
+                    <hr />
+
+                    <h3>
+                        Donation Tax Certificate
+                    </h3>
+
+                </div>
+
+
+                <!-- =================================
+                     CERTIFICATE DETAILS
+                     ================================= -->
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Certificate Number
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @Model.TaxCertificateNumber
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Donation Date
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @Model.DonationDate
+                        .ToLocalTime()
+                        .ToString("dd MMM yyyy")
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Donation Amount
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @Model.Currency
+                        @Model.Amount.ToString("N2")
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Donation Type
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @Model.DonationType
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-3">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Currency
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @Model.Currency
+
+                    </div>
+
+                </div>
+
+
+                <div class="row mb-4">
+
+                    <div class="col-md-6">
+
+                        <strong>
+                            Donor Type
+                        </strong>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        @(Model.IsAnonymous
+                                                ? "Anonymous Donor"
+                                                : "Registered Donor")
+
+                    </div>
+
+                </div>
+
+
+                <hr />
+
+
+                <div class="text-center mt-4">
+
+                    <p>
+                        This certificate confirms that the above
+                        donation was recorded by the
+                        Gift of the Givers Disaster Relief System.
+                    </p>
+
+                    <p class="text-muted">
+                        This is a prototype tax certificate
+                        generated for demonstration purposes.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     ACTION BUTTONS
+                     ================================= -->
+
+                <div class="mt-4 d-flex flex-wrap gap-3 justify-content-center">
+
+                    <button type="button"
+                            class="donor-yellow-button"
+                            onclick="window.print()">
+
+                        Download / Print Certificate
+
+                    </button>
+
+
+                    <a asp-controller="Donor"
+                       asp-action="DonationHistory"
+                       class="donor-outline-button">
+
+                        Back to Donation History
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

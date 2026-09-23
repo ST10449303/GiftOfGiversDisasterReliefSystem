@@ -1,0 +1,348 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.ApplicationUser
+
+@{
+    ViewData["Title"] = "Employee Dashboard";
+}
+
+<div class="employee-page">
+
+    <!-- ==========================================
+         DASHBOARD HEADER
+         ========================================== -->
+
+    <section class="employee-dashboard-header">
+
+        <div class="container">
+
+            <p class="employee-small-title">
+                EMPLOYEE DASHBOARD
+            </p>
+
+            <h1>
+                Welcome, @Model.FullName
+            </h1>
+
+            <p>
+                Manage relief projects, donations,
+                volunteer registrations and contact messages.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         DASHBOARD CONTENT
+         ========================================== -->
+
+    <section class="employee-content">
+
+        <div class="container">
+
+
+            <!-- ==========================================
+                 STATISTICS
+                 ========================================== -->
+
+            <div class="row g-4 mb-5">
+
+
+                <!-- ==========================================
+                     RELIEF PROJECTS
+                     ========================================== -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            RELIEF PROJECTS
+                        </span>
+
+                        <h2>
+                            @ViewBag.ProjectCount
+                        </h2>
+
+                        <p>
+                            Ongoing projects
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     VOLUNTEERS
+                     ========================================== -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            VOLUNTEERS
+                        </span>
+
+                        <h2>
+                            @ViewBag.VolunteerCount
+                        </h2>
+
+                        <p>
+                            Registered volunteers
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     DONATIONS
+                     ========================================== -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            DONATIONS
+                        </span>
+
+                        <h2>
+                            @ViewBag.DonationCount
+                        </h2>
+
+                        <p>
+                            Donations received
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ==========================================
+                     CONTACT MESSAGES
+                     ========================================== -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="employee-stat-card">
+
+                        <span>
+                            MESSAGES
+                        </span>
+
+                        <h2>
+                            @ViewBag.MessageCount
+                        </h2>
+
+                        <p>
+                            Contact enquiries
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 QUICK ACTIONS
+                 ========================================== -->
+
+            <div class="employee-dashboard-actions">
+
+
+                <!-- ==========================================
+                     SECTION HEADING
+                     ========================================== -->
+
+                <div class="employee-section-heading">
+
+                    <h2>
+                        Quick Actions
+                    </h2>
+
+                    <p>
+                        Access employee management features.
+                    </p>
+
+                </div>
+
+
+                <div class="row g-4">
+
+
+                    <!-- ==========================================
+                         POST UPDATE
+                         ========================================== -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <a asp-controller="Employee"
+                           asp-action="Updates"
+                           class="employee-dashboard-card">
+
+                            <div class="employee-dashboard-icon">
+                                +
+                            </div>
+
+                            <h3>
+                                Post Update
+                            </h3>
+
+                            <p>
+                                Add a new relief project update
+                                for the public.
+                            </p>
+
+                            <span class="employee-card-link">
+                                Open →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         VOLUNTEERS
+                         ========================================== -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <a asp-controller="Employee"
+                           asp-action="Volunteers"
+                           class="employee-dashboard-card">
+
+                            <div class="employee-dashboard-icon">
+                                ✓
+                            </div>
+
+                            <h3>
+                                Volunteers
+                            </h3>
+
+                            <p>
+                                View volunteer registrations
+                                and manage their status.
+                            </p>
+
+                            <span class="employee-card-link">
+                                View @ViewBag.VolunteerCount Volunteers →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         DONATIONS
+                         ========================================== -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <a asp-controller="Employee"
+                           asp-action="Donations"
+                           class="employee-dashboard-card">
+
+                            <div class="employee-dashboard-icon">
+                                R
+                            </div>
+
+                            <h3>
+                                Donations
+                            </h3>
+
+                            <p>
+                                View donor contributions,
+                                amounts and anonymous donations.
+                            </p>
+
+                            <span class="employee-card-link">
+                                View @ViewBag.DonationCount Donations →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         CONTACT MESSAGES
+                         ========================================== -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <a asp-controller="Employee"
+                           asp-action="Messages"
+                           class="employee-dashboard-card">
+
+                            <div class="employee-dashboard-icon">
+                                M
+                            </div>
+
+                            <h3>
+                                Messages
+                            </h3>
+
+                            <p>
+                                View enquiries and messages
+                                submitted by visitors.
+                            </p>
+
+                            <span class="employee-card-link">
+                                View @ViewBag.MessageCount Messages →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                    <!-- ==========================================
+                         PROFILE
+                         ========================================== -->
+
+                    <div class="col-md-6 col-lg-4">
+
+                        <a asp-controller="Employee"
+                           asp-action="Profile"
+                           class="employee-dashboard-card">
+
+                            <div class="employee-dashboard-icon">
+                                Profile
+                            </div>
+
+                            <h3>
+                                Manage Profile
+                            </h3>
+
+                            <p>
+                                Update your employee account
+                                information.
+                            </p>
+
+                            <span class="employee-card-link">
+                                Manage →
+                            </span>
+
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

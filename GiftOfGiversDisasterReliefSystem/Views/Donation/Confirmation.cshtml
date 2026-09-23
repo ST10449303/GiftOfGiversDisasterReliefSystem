@@ -1,0 +1,74 @@
+﻿@{
+    ViewData["Title"] = "Donation Confirmation";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-lg-7">
+
+            <div class="card border-0 shadow-sm text-center">
+
+                <div class="card-body p-5">
+
+                    <div class="display-3 mb-3">
+                        ❤️
+                    </div>
+
+                    <h1 class="fw-bold text-success">
+                        Thank You!
+                    </h1>
+
+                    <p class="lead">
+                        Your donation has been recorded as a
+                        prototype transaction.
+                    </p>
+
+                    <div class="bg-light rounded p-4 my-4 text-start">
+
+                        <p>
+                            <strong>Amount:</strong>
+                            @ViewBag.Currency @ViewBag.Amount
+                        </p>
+
+                        <p>
+                            <strong>Donation Type:</strong>
+                            @ViewBag.DonationType
+                        </p>
+
+                        <p>
+                            <strong>Anonymous:</strong>
+                            @(ViewBag.Anonymous == true ? "Yes" : "No")
+                        </p>
+
+                    </div>
+
+                    <div class="alert alert-info">
+
+                        <strong>Prototype Tax Certificate</strong>
+
+                        <p class="mb-0 mt-2">
+                            A placeholder tax certificate would be
+                            generated here in the full system.
+                        </p>
+
+                    </div>
+
+                    <a asp-controller="Home"
+                       asp-action="Index"
+                       class="btn btn-danger">
+
+                        Return Home
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

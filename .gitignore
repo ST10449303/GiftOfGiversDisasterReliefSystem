@@ -1,0 +1,10 @@
+.vs/
+**/bin/
+**/obj/
+*.user
+*.suo
+
+GiftOfGiversFunctions/Properties/PublishProfiles/
+GiftOfGiversFunctions/Properties/ServiceDependencies/
+
+GiftOfGiversFunctions/Properties/serviceDependencies*.json

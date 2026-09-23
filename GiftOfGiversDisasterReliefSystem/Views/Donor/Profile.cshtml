@@ -1,0 +1,170 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.ApplicationUser
+
+@{
+    ViewData["Title"] = "Manage Profile";
+}
+
+<div class="donor-profile-page">
+
+    <section class="donor-profile-section">
+
+        <div class="container">
+
+            <!-- Page Heading -->
+
+            <div class="donor-profile-heading">
+
+                <p class="donor-small-title">
+                    ACCOUNT
+                </p>
+
+                <h1>
+                    Manage Profile
+                </h1>
+
+                <p>
+                    Keep your donor account information up to date.
+                </p>
+
+            </div>
+
+
+            <!-- Profile Card -->
+
+            <div class="donor-profile-card">
+
+                <div class="donor-profile-card-header">
+
+                    <div>
+
+                        <h2>
+                            Profile Information
+                        </h2>
+
+                        <p>
+                            Update the information associated
+                            with your donor account.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Success Message -->
+                @if (ViewBag.SuccessMessage != null)
+                {
+                    <div class="donor-success">
+                        @ViewBag.SuccessMessage
+                    </div>
+                }
+
+
+                <!-- Validation -->
+
+                <div asp-validation-summary="ModelOnly"
+                     class="text-danger mb-3">
+                </div>
+
+
+                <!-- Profile Form -->
+
+                <form asp-controller="Donor"
+                      asp-action="Profile"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+
+                    <!-- Full Name -->
+
+                    <div class="donor-profile-field">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input type="text"
+                               id="fullName"
+                               name="fullName"
+                               value="@Model.FullName"
+                               class="form-control"
+                               placeholder="Enter your full name"
+                               required />
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="donor-profile-field">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               value="@Model.Email"
+                               class="form-control"
+                               placeholder="Enter your email address"
+                               required />
+
+                    </div>
+
+
+                    <!-- Account Role -->
+
+                    <div class="donor-profile-field">
+
+                        <label>
+                            Account Type
+                        </label>
+
+                        <div class="donor-account-type">
+
+                            <span>
+                                Donor
+                            </span>
+
+                            <small>
+                                Your account role
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Buttons -->
+
+                    <div class="donor-profile-actions">
+
+                        <button type="submit"
+                                class="donor-yellow-button">
+
+                            Save Changes
+
+                        </button>
+
+
+                        <a asp-controller="Donor"
+                           asp-action="Index"
+                           class="donor-profile-back">
+
+                            Back to Dashboard
+
+                        </a>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

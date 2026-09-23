@@ -1,0 +1,246 @@
+﻿@model IEnumerable<GiftOfGiversDisasterReliefSystem.Data.ReliefUpdate>
+
+@{
+    ViewData["Title"] = "Relief Project Updates";
+}
+
+<div class="employee-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+
+    <section class="employee-page-header">
+
+        <div class="container">
+
+            <p class="employee-small-title">
+                RELIEF PROJECTS
+            </p>
+
+            <h1>
+                Post a Relief Project Update
+            </h1>
+
+            <p>
+                Share information about current relief activities and projects.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         PAGE CONTENT
+         ========================================== -->
+
+    <section class="employee-content">
+
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-8">
+
+                    <!-- ==========================================
+                         SUCCESS MESSAGE
+                         ========================================== -->
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success mb-4">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+
+
+                    <!-- ==========================================
+                         UPDATE FORM
+                         ========================================== -->
+
+                    <div class="employee-panel-card">
+
+                        <div class="employee-card-heading">
+
+                            <h2>
+                                New Project Update
+                            </h2>
+
+                            <p>
+                                Enter the latest information about an
+                                ongoing disaster relief project.
+                            </p>
+
+                        </div>
+
+
+                        <form asp-controller="Employee"
+                              asp-action="Updates"
+                              method="post">
+
+                            @Html.AntiForgeryToken()
+
+
+                            <!-- Validation -->
+
+                            <div asp-validation-summary="ModelOnly"
+                                 class="text-danger mb-3">
+                            </div>
+
+
+                            <!-- ==========================================
+                                 PROJECT TITLE
+                                 ========================================== -->
+
+                            <div class="mb-4">
+
+                                <label for="title"
+                                       class="form-label">
+
+                                    Project Title
+
+                                </label>
+
+                                <input type="text"
+                                       id="title"
+                                       name="title"
+                                       class="form-control"
+                                       placeholder="e.g. KwaZulu-Natal Flood Relief"
+                                       maxlength="150"
+                                       required />
+
+                                <span class="text-muted">
+                                    Give the relief project a clear title.
+                                </span>
+
+                            </div>
+
+
+                            <!-- ==========================================
+                                 PROJECT UPDATE
+                                 ========================================== -->
+
+                            <div class="mb-4">
+
+                                <label for="description"
+                                       class="form-label">
+
+                                    Project Update
+
+                                </label>
+
+                                <textarea id="description"
+                                          name="description"
+                                          class="form-control"
+                                          rows="6"
+                                          maxlength="1000"
+                                          placeholder="Provide an update about the current relief activities..."
+                                          required></textarea>
+
+                                <span class="text-muted">
+                                    Describe what is currently happening
+                                    with the relief project.
+                                </span>
+
+                            </div>
+
+
+                            <!-- ==========================================
+                                 BUTTONS
+                                 ========================================== -->
+
+                            <div class="d-flex gap-3">
+
+                                <button type="submit"
+                                        class="primary-button">
+
+                                    Post Update
+
+                                </button>
+
+
+                                <a asp-controller="Employee"
+                                   asp-action="Index"
+                                   class="secondary-button">
+
+                                    Back to Dashboard
+
+                                </a>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ==========================================
+                 EXISTING UPDATES
+                 ========================================== -->
+
+            <div class="employee-panel-card mt-5">
+
+                <div class="employee-card-heading">
+
+                    <h2>
+                        Recent Relief Updates
+                    </h2>
+
+                    <p>
+                        Updates that have already been posted by employees.
+                    </p>
+
+                </div>
+
+
+                @if (Model != null && Model.Any())
+                {
+                    foreach (var update in Model)
+                    {
+                        <div class="border-bottom py-4">
+
+                            <h3>
+                                @update.Title
+                            </h3>
+
+                            <p>
+                                @update.Description
+                            </p>
+
+                            <small class="text-muted">
+                                Posted:
+                                @update.DatePosted.ToString("dd MMMM yyyy, HH:mm")
+                            </small>
+
+                        </div>
+                    }
+                }
+                else
+                {
+                    <div class="text-center py-4">
+
+                        <p class="text-muted mb-0">
+                            No relief project updates have been posted yet.
+                        </p>
+
+                    </div>
+                }
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

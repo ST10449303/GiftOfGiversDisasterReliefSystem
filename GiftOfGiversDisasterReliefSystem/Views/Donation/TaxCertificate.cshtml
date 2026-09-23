@@ -1,0 +1,97 @@
+﻿@{
+    ViewData["Title"] = "Tax Certificate";
+
+    string donorName = ViewBag.DonorName ?? "Anonymous Guest";
+    string donationType = ViewBag.DonationType ?? "One-Time";
+    string currency = ViewBag.Currency ?? "ZAR";
+    string amount = ViewBag.Amount ?? "0.00";
+    string certificateNumber = ViewBag.CertificateNumber ?? "GOG-000001";
+}
+
+<section class="certificate-page">
+
+    <div class="certificate">
+
+        <div class="certificate-top">
+
+            <span>GIFT OF THE GIVERS</span>
+
+            <h1>Tax Certificate</h1>
+
+            <p>
+                Donation Acknowledgement
+            </p>
+
+        </div>
+
+
+        <div class="certificate-body">
+
+            <p>
+                This certificate acknowledges the following
+                donation made in support of disaster relief.
+            </p>
+
+
+            <div class="certificate-row">
+                <span>Certificate Number</span>
+                <strong>@certificateNumber</strong>
+            </div>
+
+
+            <div class="certificate-row">
+                <span>Donor</span>
+                <strong>@donorName</strong>
+            </div>
+
+
+            <div class="certificate-row">
+                <span>Donation Type</span>
+                <strong>@donationType</strong>
+            </div>
+
+
+            <div class="certificate-row">
+                <span>Currency</span>
+                <strong>@currency</strong>
+            </div>
+
+
+            <div class="certificate-row">
+                <span>Donation Amount</span>
+                <strong>@currency @amount</strong>
+            </div>
+
+
+            <div class="certificate-thanks">
+
+                Thank you for supporting communities
+                affected by disasters.
+
+            </div>
+
+        </div>
+
+
+        <div class="certificate-footer">
+
+            <button onclick="window.print()"
+                    class="donor-primary-button">
+
+                Print / Save Certificate
+
+            </button>
+
+            <a asp-controller="Donor"
+               asp-action="Index"
+               class="donor-back-button">
+
+                Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>

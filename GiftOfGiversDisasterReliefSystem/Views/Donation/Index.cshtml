@@ -1,0 +1,212 @@
+﻿@{
+    ViewData["Title"] = "Donate";
+}
+
+<!-- Page Header -->
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>Support Disaster Relief</h1>
+
+        <p>
+            Your contribution can help communities affected by disasters.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- Donation Section -->
+<section class="page-content">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="content-card">
+
+                    <h2>Make a Donation</h2>
+
+                    <p>
+                        You can support our relief efforts as a registered
+                        donor or make an anonymous donation as a guest.
+                    </p>
+
+
+                    <!-- Donor Options -->
+
+                    <div class="donor-options">
+
+                        <div class="donor-option">
+
+                            <h5>Registered Donor</h5>
+
+                            <p>
+                                Login or create an account to make a
+                                donation using your donor profile.
+                            </p>
+
+                            <a asp-area="Identity"
+                               asp-page="/Account/Login"
+                               class="primary-button">
+
+                                Login / Register
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="donor-option">
+
+                            <h5>Anonymous Guest</h5>
+
+                            <p>
+                                Make a donation without creating
+                                an account.
+                            </p>
+
+                            <a href="#donation-form"
+                               class="secondary-button">
+
+                                Continue as Guest
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <hr />
+
+
+                    <!-- Donation Form -->
+
+                    <div id="donation-form">
+
+                        <h3>Donation Details</h3>
+
+                        <p>
+                            Enter your donation details below.
+                            No account is required for an anonymous donation.
+                        </p>
+
+
+                        <form asp-controller="Donation"
+                              asp-action="Submit"
+                              method="post">
+
+                            @Html.AntiForgeryToken()
+
+
+                            <!-- Donation Type -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Donation Type
+                                </label>
+
+                                <select name="donationType"
+                                        class="form-select"
+                                        required>
+
+                                    <option value="One-Time">
+                                        One-Time Donation
+                                    </option>
+
+                                    <option value="Recurring">
+                                        Recurring Donation
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Currency -->
+
+                            <div class="mb-3">
+
+                                <label class="form-label">
+                                    Currency
+                                </label>
+
+                                <select name="currency"
+                                        class="form-select"
+                                        required>
+
+                                    <option value="ZAR">
+                                        ZAR - South African Rand
+                                    </option>
+
+                                    <option value="USD">
+                                        USD - US Dollar
+                                    </option>
+
+                                    <option value="EUR">
+                                        EUR - Euro
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <!-- Amount -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+                                    Donation Amount
+                                </label>
+
+                                <input type="number"
+                                       name="amount"
+                                       class="form-control"
+                                       placeholder="Enter amount"
+                                       min="1"
+                                       step="0.01"
+                                       required />
+
+                                <div asp-validation-summary="ModelOnly"
+                                     class="text-danger mt-2">
+                                </div>
+
+                            </div>
+
+
+                            <!-- Anonymous -->
+
+                            <input type="hidden"
+                                   name="anonymous"
+                                   value="true" />
+
+
+                            <!-- Submit -->
+
+                            <button type="submit"
+                                    class="primary-button">
+
+                                Make Anonymous Donation
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

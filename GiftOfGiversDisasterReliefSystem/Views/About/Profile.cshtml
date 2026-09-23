@@ -1,0 +1,115 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.ApplicationUser
+
+@{
+    ViewData["Title"] = "Employee Profile";
+}
+
+<div class="employee-page">
+
+    <section class="employee-header">
+
+        <div class="container">
+
+            <span class="employee-label">
+                EMPLOYEE PANEL
+            </span>
+
+            <h1>My Profile</h1>
+
+            <p>
+                Update your account information.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="employee-content">
+
+        <div class="container">
+
+            <div class="employee-profile-container">
+
+                <div class="employee-panel-card">
+
+                    <h2>Profile Information</h2>
+
+                    <p>
+                        Update your name or email address below.
+                    </p>
+
+
+                    @if (ViewBag.SuccessMessage != null)
+                    {
+                        <div class="employee-success">
+                            @ViewBag.SuccessMessage
+                        </div>
+                    }
+
+
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-danger mb-3">
+                    </div>
+
+
+                    <form asp-action="Profile"
+                          method="post">
+
+                        <div class="mb-3">
+
+                            <label class="employee-form-label">
+                                Full Name
+                            </label>
+
+                            <input type="text"
+                                   name="fullName"
+                                   value="@Model.FullName"
+                                   class="form-control"
+                                   required />
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="employee-form-label">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   name="email"
+                                   value="@Model.Email"
+                                   class="form-control"
+                                   required />
+
+                        </div>
+
+
+                        <button type="submit"
+                                class="employee-button">
+
+                            Save Changes
+
+                        </button>
+
+
+                        <a asp-controller="Employee"
+                           asp-action="Index"
+                           class="profile-back-button">
+
+                            Back to Dashboard
+
+                        </a>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

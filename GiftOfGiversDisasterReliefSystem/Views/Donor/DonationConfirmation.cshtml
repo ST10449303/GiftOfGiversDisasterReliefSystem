@@ -1,0 +1,225 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.Donation
+
+@{
+    ViewData["Title"] = "Donation Confirmation";
+}
+
+<div class="donor-dashboard">
+
+    <!-- =========================================
+         CONFIRMATION HEADER
+         ========================================= -->
+
+    <section class="donor-welcome">
+
+        <div class="container">
+
+            <p class="donor-small-title">
+                DONATION SUCCESSFUL
+            </p>
+
+            <h1>
+                Thank You for Your Donation
+            </h1>
+
+            <p>
+                Your support helps provide essential assistance
+                to communities affected by disasters and emergencies.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CONFIRMATION CONTENT
+         ========================================= -->
+
+    <section class="donor-dashboard-content">
+
+        <div class="container">
+
+            <div class="donor-panel-card">
+
+                <div class="text-center mb-4">
+
+                    <h2>
+                        Donation Recorded Successfully
+                    </h2>
+
+                    <p>
+                        Your donation has been recorded successfully.
+                    </p>
+
+                </div>
+
+
+                <!-- =================================
+                     DONATION DETAILS
+                     ================================= -->
+
+                <div class="mb-4">
+
+                    <h3>
+                        Donation Details
+                    </h3>
+
+                    <div class="table-responsive">
+
+                        <table class="table">
+
+                            <tbody>
+
+                                <tr>
+
+                                    <th>
+                                        Donation Amount
+                                    </th>
+
+                                    <td>
+                                        @Model.Currency
+                                        @Model.Amount.ToString("N2")
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <th>
+                                        Donation Type
+                                    </th>
+
+                                    <td>
+                                        @Model.DonationType
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <th>
+                                        Currency
+                                    </th>
+
+                                    <td>
+                                        @Model.Currency
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <th>
+                                        Donation Date
+                                    </th>
+
+                                    <td>
+                                        @(Model.DonationDate.ToLocalTime().ToString("dd MMMM yyyy, HH:mm"))
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <hr />
+
+
+                <!-- =================================
+                     TAX CERTIFICATE
+                     ================================= -->
+
+                <div class="mb-4">
+
+                    <p class="donor-small-title">
+                        TAX CERTIFICATE
+                    </p>
+
+                    <h3>
+                        Placeholder Tax Certificate
+                    </h3>
+
+                    <p>
+                        A placeholder tax certificate has been
+                        generated for this prototype donation.
+                    </p>
+
+
+                    <div class="mt-3">
+
+                        <strong>
+                            Certificate Number:
+                        </strong>
+
+                        <p>
+                            @Model.TaxCertificateNumber
+                        </p>
+
+                    </div>
+
+
+                    <button type="button"
+                            class="donor-yellow-button"
+                            onclick="window.print()">
+
+                        Print / Save Certificate
+
+                    </button>
+
+                </div>
+
+
+                <hr />
+
+
+                <!-- =================================
+                     ACTIONS
+                     ================================= -->
+
+                <div class="d-flex flex-wrap gap-3">
+
+                    <a asp-controller="Donor"
+                       asp-action="DonationHistory"
+                       class="donor-outline-button">
+
+                        View Donation History
+
+                    </a>
+
+
+                    <a asp-controller="Donor"
+                       asp-action="Donate"
+                       class="donor-yellow-button">
+
+                        Make Another Donation
+
+                    </a>
+
+
+                    <a asp-controller="Donor"
+                       asp-action="Index"
+                       class="donor-outline-button">
+
+                        Back to Dashboard
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

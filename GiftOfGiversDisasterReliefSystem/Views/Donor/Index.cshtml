@@ -1,0 +1,236 @@
+﻿@model GiftOfGiversDisasterReliefSystem.Data.ApplicationUser
+
+@{
+    ViewData["Title"] = "Donor Dashboard";
+}
+
+<div class="donor-dashboard">
+
+    <!-- =========================================
+         WELCOME
+         ========================================= -->
+
+    <section class="donor-welcome">
+
+        <div class="container">
+
+            <p class="donor-small-title">
+                DONOR DASHBOARD
+            </p>
+
+            <h1>
+                Welcome, @Model.FullName
+            </h1>
+
+            <p>
+                Thank you for supporting disaster relief
+                and communities in need.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         DASHBOARD CONTENT
+         ========================================= -->
+
+    <section class="donor-dashboard-content">
+
+        <div class="container">
+
+
+            <!-- =================================
+                 SUMMARY STATISTICS
+                 ================================= -->
+
+            <div class="row g-4 mb-4">
+
+
+                <!-- TOTAL DONATIONS -->
+
+                <div class="col-md-6">
+
+                    <div class="donor-stat-card">
+
+                        <span>
+                            TOTAL DONATIONS
+                        </span>
+
+                        <h2>
+                            @(ViewBag.DonationCount ?? 0)
+                        </h2>
+
+                        <p>
+                            Donations made
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TAX CERTIFICATES -->
+
+                <div class="col-md-6">
+
+                    <div class="donor-stat-card">
+
+                        <span>
+                            TAX CERTIFICATES
+                        </span>
+
+                        <h2>
+                            @(ViewBag.CertificateCount ?? 0)
+                        </h2>
+
+                        <p>
+                            Certificates available
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 DONATION ACTION
+                 ================================= -->
+
+            <div class="donor-action-card">
+
+                <div>
+
+                    <p class="donor-small-title">
+                        SUPPORT OUR WORK
+                    </p>
+
+                    <h2>
+                        Make a Difference
+                    </h2>
+
+                    <p>
+                        Your contribution can help provide
+                        essential support to people affected
+                        by disasters and emergencies.
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <a asp-controller="Donor"
+                       asp-action="Donate"
+                       class="donor-yellow-button">
+
+                        Donate Now
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 DONATION HISTORY
+                 ================================= -->
+
+            <div class="donor-account-card">
+
+                <div>
+
+                    <h2>
+                        Donation History
+                    </h2>
+
+                    <p>
+                        View your previous donations,
+                        donation types, currencies and
+                        available tax certificates.
+                    </p>
+
+                </div>
+
+
+                <a asp-controller="Donor"
+                   asp-action="DonationHistory"
+                   class="donor-outline-button">
+
+                    View Donations
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 TAX CERTIFICATES
+                 ================================= -->
+
+            <div class="donor-account-card">
+
+                <div>
+
+                    <h2>
+                        Tax Certificates
+                    </h2>
+
+                    <p>
+                        View the placeholder tax certificates
+                        generated for your donations.
+                    </p>
+
+                </div>
+
+
+                <a asp-controller="Donor"
+                   asp-action="DonationHistory"
+                   class="donor-outline-button">
+
+                    View Certificates
+
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 ACCOUNT
+                 ================================= -->
+
+            <div class="donor-account-card">
+
+                <div>
+
+                    <h2>
+                        Your Account
+                    </h2>
+
+                    <p>
+                        Keep your donor information up to date.
+                    </p>
+
+                </div>
+
+
+                <a asp-controller="Donor"
+                   asp-action="Profile"
+                   class="donor-outline-button">
+
+                    Manage Profile
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</div>

@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] - Gift of the Givers
+    </title>
+
+    <link rel="stylesheet"
+          href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet"
+          href="~/css/site.css"
+          asp-append-version="true" />
+
+</head>
+
+
+<body class="donor-layout">
+
+
+    <!-- =========================================
+         DONOR NAVIGATION
+         ========================================= -->
+
+    <header class="donor-navbar">
+
+        <div class="donor-navbar-container">
+
+
+            <!-- =====================================
+                 BRAND
+                 ===================================== -->
+
+            <a asp-controller="Donor"
+               asp-action="Index"
+               class="donor-brand">
+
+                <div class="donor-logo-text">
+
+                    <span class="donor-logo-title">
+                        GIFT OF THE GIVERS
+                    </span>
+
+                    <span class="donor-logo-subtitle">
+                        DISASTER RELIEF
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <!-- =====================================
+                 MOBILE MENU BUTTON
+                 ===================================== -->
+
+            <button type="button"
+                    class="donor-menu-button"
+                    onclick="openDonorMenu()"
+                    aria-label="Open donor menu">
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+
+            <!-- =====================================
+                 DONOR NAVIGATION
+                 ===================================== -->
+
+            <nav id="donorNavigation"
+                 class="donor-navigation">
+
+
+                <!-- CLOSE BUTTON -->
+
+                <button type="button"
+                        class="donor-menu-close"
+                        onclick="closeDonorMenu()"
+                        aria-label="Close donor menu">
+
+                    &times;
+
+                </button>
+
+
+                <!-- DASHBOARD -->
+
+                <a asp-controller="Donor"
+                   asp-action="Index"
+                   class="donor-nav-link">
+
+                    Dashboard
+
+                </a>
+
+
+                <!-- DONATE -->
+
+                <a asp-controller="Donor"
+                   asp-action="Donate"
+                   class="donor-nav-link">
+
+                    Donate
+
+                </a>
+
+
+                <!-- DONATION HISTORY -->
+
+                <a asp-controller="Donor"
+                   asp-action="DonationHistory"
+                   class="donor-nav-link">
+
+                    Donation History
+
+                </a>
+
+
+                <!-- MANAGE PROFILE -->
+
+                <a asp-controller="Donor"
+                   asp-action="Profile"
+                   class="donor-nav-link">
+
+                    Manage Profile
+
+                </a>
+
+
+                <!-- LOG OUT -->
+
+                <form asp-area="Identity"
+                      asp-page="/Account/Logout"
+                      method="post"
+                      class="donor-logout-form">
+
+                    @Html.AntiForgeryToken()
+
+                    <button type="submit"
+                            class="donor-logout-button">
+
+                        Log Out
+
+                    </button>
+
+                </form>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+         ========================================= -->
+
+    <div id="donorMenuOverlay"
+         class="donor-menu-overlay"
+         onclick="closeDonorMenu()">
+    </div>
+
+
+    <!-- =========================================
+         PAGE CONTENT
+         ========================================= -->
+
+    <main>
+
+        @RenderBody()
+
+    </main>
+
+
+    <!-- =========================================
+         DONOR FOOTER
+         ========================================= -->
+
+    <footer class="donor-footer">
+
+        <div class="container">
+
+            <span>
+                Gift of the Givers
+            </span>
+
+            <span>
+                Donor Portal
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+         ========================================= -->
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="~/js/site.js"
+            asp-append-version="true"></script>
+
+
+    <script>
+
+        function openDonorMenu() {
+
+            var menu =
+                document.getElementById("donorNavigation");
+
+            var overlay =
+                document.getElementById("donorMenuOverlay");
+
+            menu.classList.add("show");
+
+            overlay.classList.add("show");
+
+            document.body.classList.add("donor-menu-open");
+
+        }
+
+
+        function closeDonorMenu() {
+
+            var menu =
+                document.getElementById("donorNavigation");
+
+            var overlay =
+                document.getElementById("donorMenuOverlay");
+
+            menu.classList.remove("show");
+
+            overlay.classList.remove("show");
+
+            document.body.classList.remove("donor-menu-open");
+
+        }
+
+
+        window.addEventListener("resize", function () {
+
+            if (window.innerWidth > 991) {
+
+                closeDonorMenu();
+
+            }
+
+        });
+
+    </script>
+
+
+    @await RenderSectionAsync(
+    "Scripts",
+        required: false)
+
+</body>
+
+</html>

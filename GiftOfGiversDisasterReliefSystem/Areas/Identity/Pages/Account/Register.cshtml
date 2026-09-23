@@ -1,0 +1,210 @@
+@page
+@model RegisterModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>Create Your Account</h1>
+
+        <p>
+            Register as a donor or employee to access the appropriate panel.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="page-content">
+
+    <div class="container">
+
+        <div class="form-container">
+
+            <div class="content-card">
+
+                <h2>Create Account</h2>
+
+                <p>
+                    Complete the form below to create your account.
+                </p>
+
+
+                <form method="post">
+
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-danger mb-3">
+                    </div>
+
+
+                    <!-- Account Type -->
+
+                    <div class="mb-4">
+
+                        <label asp-for="Input.Role"
+                               class="form-label">
+
+                            Account Type
+
+                        </label>
+
+                        <select asp-for="Input.Role"
+                                class="form-select">
+
+                            <option value="">
+                                -- Select Account Type --
+                            </option>
+
+                            <option value="Donor">
+                                Donor
+                            </option>
+
+                            <option value="Employee">
+                                Employee
+                            </option>
+
+                        </select>
+
+                        <span asp-validation-for="Input.Role"
+                              class="text-danger">
+                        </span>
+
+                        <small class="text-muted">
+                            Select the type of account you want to create.
+                        </small>
+
+                    </div>
+
+
+                    <!-- Full Name -->
+
+                    <div class="mb-3">
+
+                        <label asp-for="Input.FullName"
+                               class="form-label">
+
+                            Full Name
+
+                        </label>
+
+                        <input asp-for="Input.FullName"
+                               class="form-control"
+                               placeholder="Enter your full name" />
+
+                        <span asp-validation-for="Input.FullName"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="mb-3">
+
+                        <label asp-for="Input.Email"
+                               class="form-label">
+
+                            Email Address
+
+                        </label>
+
+                        <input asp-for="Input.Email"
+                               class="form-control"
+                               placeholder="Enter your email address" />
+
+                        <span asp-validation-for="Input.Email"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <!-- Password -->
+
+                    <div class="mb-3">
+
+                        <label asp-for="Input.Password"
+                               class="form-label">
+
+                            Password
+
+                        </label>
+
+                        <input asp-for="Input.Password"
+                               class="form-control"
+                               placeholder="Create a password" />
+
+                        <span asp-validation-for="Input.Password"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <!-- Confirm Password -->
+
+                    <div class="mb-4">
+
+                        <label asp-for="Input.ConfirmPassword"
+                               class="form-label">
+
+                            Confirm Password
+
+                        </label>
+
+                        <input asp-for="Input.ConfirmPassword"
+                               class="form-control"
+                               placeholder="Confirm your password" />
+
+                        <span asp-validation-for="Input.ConfirmPassword"
+                              class="text-danger">
+                        </span>
+
+                    </div>
+
+
+                    <!-- Register -->
+
+                    <button type="submit"
+                            class="primary-button w-100">
+
+                        Create Account
+
+                    </button>
+
+                </form>
+
+
+                <hr />
+
+
+                <p class="text-center mb-0">
+
+                    Already have an account?
+
+                    <a asp-page="./Login">
+                        Login
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

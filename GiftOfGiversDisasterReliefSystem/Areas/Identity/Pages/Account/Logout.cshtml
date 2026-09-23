@@ -1,0 +1,49 @@
+@page
+@model GiftOfGiversDisasterReliefSystem.Areas.Identity.Pages.Account.LogoutModel
+
+@{
+    ViewData["Title"] = "Log Out";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-5">
+
+            <div class="content-card text-center">
+
+                <h2>
+                    Log Out
+                </h2>
+
+                <p>
+                    Are you sure you want to log out of your Gift of the Givers account?
+                </p>
+
+                <form method="post">
+
+                    <button type="submit"
+                            class="btn btn-dark px-4">
+
+                        Log Out
+
+                    </button>
+
+                    <a asp-controller="Donor"
+                       asp-action="Index"
+                       class="btn btn-outline-secondary px-4 ms-2">
+
+                        Cancel
+
+                    </a>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

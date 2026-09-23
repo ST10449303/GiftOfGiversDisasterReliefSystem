@@ -1,0 +1,209 @@
+﻿@{
+    ViewData["Title"] = "Volunteer";
+}
+
+<!-- ==========================================
+     PAGE HEADER
+     ========================================== -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>
+            Become a Volunteer
+        </h1>
+
+        <p>
+            Give your time and skills to help communities in need.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     VOLUNTEER FORM
+     ========================================== -->
+
+<section class="page-content">
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-8">
+
+                <div class="content-card">
+
+                    <h2>
+                        Volunteer Interest Form
+                    </h2>
+
+                    <p>
+                        Tell us a little about yourself and how you
+                        would like to contribute.
+                    </p>
+
+
+                    <!-- Success Message -->
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success mb-4">
+
+                            @TempData["SuccessMessage"]
+
+                        </div>
+                    }
+
+
+                    <!-- Validation -->
+
+                    <div asp-validation-summary="ModelOnly"
+                         class="text-danger mb-3">
+                    </div>
+
+
+                    <!-- FORM -->
+
+                    <form asp-controller="Volunteer"
+                          asp-action="Index"
+                          method="post">
+
+                        @Html.AntiForgeryToken()
+
+
+                        <!-- ==================================
+                             FULL NAME
+                             ================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Full Name
+
+                            </label>
+
+                            <input type="text"
+                                   name="fullName"
+                                   class="form-control"
+                                   placeholder="Enter your full name"
+                                   required />
+
+                        </div>
+
+
+                        <!-- ==================================
+                             EMAIL
+                             ================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Email Address
+
+                            </label>
+
+                            <input type="email"
+                                   name="email"
+                                   class="form-control"
+                                   placeholder="Enter your email address"
+                                   required />
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SKILLS
+                             ================================== -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+
+                                Skills
+
+                            </label>
+
+                            <input type="text"
+                                   name="skills"
+                                   class="form-control"
+                                   placeholder="e.g. First Aid, Cooking, Logistics"
+                                   required />
+
+                        </div>
+
+
+                        <!-- ==================================
+                             AVAILABILITY
+                             ================================== -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+
+                                Availability
+
+                            </label>
+
+                            <select name="availability"
+                                    class="form-select"
+                                    required>
+
+                                <option value="">
+                                    Select your availability
+                                </option>
+
+                                <option value="Weekdays">
+                                    Weekdays
+                                </option>
+
+                                <option value="Weekends">
+                                    Weekends
+                                </option>
+
+                                <option value="Full-Time">
+                                    Full-Time
+                                </option>
+
+                                <option value="As Needed">
+                                    As Needed
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <!-- ==================================
+                             SUBMIT
+                             ================================== -->
+
+                        <button type="submit"
+                                class="primary-button">
+
+                            Submit Interest
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <partial name="_ValidationScriptsPartial" />
+
+}

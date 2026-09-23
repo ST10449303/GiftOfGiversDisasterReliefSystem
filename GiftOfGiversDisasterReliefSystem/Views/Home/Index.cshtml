@@ -1,0 +1,165 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<!-- ==========================================
+     HERO SECTION
+     ========================================== -->
+
+<section class="hero-section">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-8">
+
+                <h1>
+                    Helping Communities
+                    in Times of Crisis
+                </h1>
+
+                <p>
+                    Gift of the Givers provides humanitarian relief
+                    and support to communities affected by disasters.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a asp-controller="Donation"
+                       asp-action="Index"
+                       class="btn btn-donate">
+                        Donate Now
+                    </a>
+
+                    <a asp-controller="Volunteer"
+                       asp-action="Index"
+                       class="btn btn-volunteer">
+                        Become a Volunteer
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     WHAT WE DO
+     ========================================== -->
+
+<section class="simple-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                What We Do
+            </h2>
+
+            <p>
+                Supporting people and communities when they need it most.
+            </p>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            <!-- Disaster Relief -->
+
+            <div class="col-md-4">
+
+                <div class="simple-card">
+
+                    <h3>
+                        Disaster Relief
+                    </h3>
+
+                    <p>
+                        Providing essential assistance to communities
+                        affected by disasters and emergencies.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Community Support -->
+
+            <div class="col-md-4">
+
+                <div class="simple-card">
+
+                    <h3>
+                        Community Support
+                    </h3>
+
+                    <p>
+                        Helping vulnerable communities recover and
+                        rebuild after difficult events.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Volunteering -->
+
+            <div class="col-md-4">
+
+                <div class="simple-card">
+
+                    <h3>
+                        Volunteering
+                    </h3>
+
+                    <p>
+                        Connecting people who want to contribute
+                        their time and skills to relief efforts.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     DONATION CTA
+     ========================================== -->
+
+<section class="simple-cta">
+
+    <div class="container">
+
+        <h2>
+            Your Support Can Make a Difference
+        </h2>
+
+        <p>
+            Help us support communities affected by disasters.
+        </p>
+
+        <a asp-controller="Donation"
+           asp-action="Index"
+           class="cta-button">
+            Donate Now
+        </a>
+
+    </div>
+
+</section>

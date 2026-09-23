@@ -1,0 +1,268 @@
+﻿@model IEnumerable<GiftOfGiversDisasterReliefSystem.Data.VolunteerInterest>
+
+@{
+    ViewData["Title"] = "Volunteer Sign-ups";
+}
+
+<div class="employee-page">
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+
+    <section class="employee-page-header">
+
+        <div class="container">
+
+            <p class="employee-small-title">
+                VOLUNTEERS
+            </p>
+
+            <h1>
+                Volunteer Sign-ups
+            </h1>
+
+            <p>
+                Review and manage volunteer applications.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         VOLUNTEER CONTENT
+         ========================================== -->
+
+    <section class="employee-content">
+
+        <div class="container">
+
+            <div class="employee-panel-card">
+
+                <div class="employee-card-heading">
+
+                    <h2>
+                        Volunteer Registrations
+                    </h2>
+
+                    <p>
+                        Review volunteer information submitted
+                        through the public volunteer form.
+                    </p>
+
+                </div>
+
+
+                <!-- ==========================================
+                     REGISTRATION COUNT
+                     ========================================== -->
+
+                <div class="mb-4">
+
+                    <strong>
+                        Total Registrations:
+                    </strong>
+
+                    <span>
+                        @Model.Count()
+                    </span>
+
+                </div>
+
+
+                <!-- ==========================================
+                     VOLUNTEER TABLE
+                     ========================================== -->
+
+                <div class="table-responsive">
+
+                    <table class="table employee-volunteer-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    Name
+                                </th>
+
+                                <th>
+                                    Email
+                                </th>
+
+                                <th>
+                                    Skills
+                                </th>
+
+                                <th>
+                                    Availability
+                                </th>
+
+                                <th>
+                                    Date Registered
+                                </th>
+
+                                <th>
+                                    Status
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            @if (Model != null && Model.Any())
+                            {
+                                foreach (var volunteer in Model)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @volunteer.FullName
+                                        </td>
+
+                                        <td>
+                                            @volunteer.Email
+                                        </td>
+
+                                        <td>
+                                            @volunteer.Skills
+                                        </td>
+
+                                        <td>
+                                            @volunteer.Availability
+                                        </td>
+
+                                        <td>
+                                            @volunteer.DateRegistered.ToString("dd MMM yyyy")
+                                        </td>
+
+                                        <td>
+
+                                            <form asp-controller="Employee"
+                                                  asp-action="UpdateVolunteerStatus"
+                                                  method="post">
+
+                                                @Html.AntiForgeryToken()
+
+                                                <input type="hidden"
+                                                       name="id"
+                                                       value="@volunteer.Id" />
+
+                                                <select name="status"
+                                                        class="form-select"
+                                                        onchange="this.form.submit()">
+
+                                                    @if (volunteer.Status == "Waiting")
+                                                    {
+                                                        <option value="Waiting" selected>
+                                                            Waiting
+                                                        </option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="Waiting">
+                                                            Waiting
+                                                        </option>
+                                                    }
+
+                                                    @if (volunteer.Status == "Approved")
+                                                    {
+                                                        <option value="Approved" selected>
+                                                            Approved
+                                                        </option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="Approved">
+                                                            Approved
+                                                        </option>
+                                                    }
+
+                                                    @if (volunteer.Status == "Rejected")
+                                                    {
+                                                        <option value="Rejected" selected>
+                                                            Rejected
+                                                        </option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="Rejected">
+                                                            Rejected
+                                                        </option>
+                                                    }
+
+                                                </select>
+
+                                            </form>
+
+                                        </td>
+
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
+                                <tr>
+
+                                    <td colspan="6"
+                                        class="text-center">
+
+                                        No volunteer registrations yet.
+
+                                    </td>
+
+                                </tr>
+                            }
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <!-- ==========================================
+                     INFORMATION NOTE
+                     ========================================== -->
+
+                <div class="employee-volunteer-note">
+
+                    <strong>
+                        Managing Volunteers
+                    </strong>
+
+                    <p>
+                        New applications start as
+                        <strong>Waiting</strong>.
+                        Select <strong>Approved</strong> or
+                        <strong>Rejected</strong> to update the
+                        volunteer's application status.
+                    </p>
+
+                </div>
+
+
+                <!-- ==========================================
+                     BACK TO DASHBOARD
+                     ========================================== -->
+
+                <a asp-controller="Employee"
+                   asp-action="Index"
+                   class="employee-back-button">
+
+                    Back to Dashboard
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
