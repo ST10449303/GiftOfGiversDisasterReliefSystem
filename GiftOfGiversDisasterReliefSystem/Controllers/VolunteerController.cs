@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
+//Volunteer feature update for B.2 branching and merging
 namespace GiftOfGiversDisasterReliefSystem.Controllers
 {
     public class VolunteerController : Controller
