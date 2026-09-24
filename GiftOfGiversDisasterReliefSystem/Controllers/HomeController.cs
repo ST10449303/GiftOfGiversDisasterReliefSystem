@@ -2,6 +2,7 @@ using System.Diagnostics;
 using GiftOfGiversDisasterReliefSystem.Models;
 using Microsoft.AspNetCore.Mvc;
 
+// Home feature updated for Azure Repos branching task
 namespace GiftOfGiversDisasterReliefSystem.Controllers
 {
     public class HomeController : Controller
