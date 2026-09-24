@@ -1,0 +1,57 @@
+trigger:
+- main
+
+pool:
+  name: 'Default'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+
+- powershell: |
+    Write-Host "Checking installed .NET SDK..."
+    dotnet --info
+  displayName: 'Check .NET SDK'
+
+- powershell: |
+    $solution = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Recurse -Filter "*.sln" | Select-Object -First 1
+
+    if (-not $solution) {
+        Write-Error "No Visual Studio solution (.sln) was found."
+        exit 1
+    }
+
+    Write-Host "Solution found: $($solution.FullName)"
+    dotnet restore $solution.FullName
+  displayName: 'Restore dependencies'
+
+- powershell: |
+    $solution = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Recurse -Filter "*.sln" | Select-Object -First 1
+
+    if (-not $solution) {
+        Write-Error "No Visual Studio solution (.sln) was found."
+        exit 1
+    }
+
+    Write-Host "Building solution: $($solution.FullName)"
+    dotnet build $solution.FullName --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build solution'
+
+- powershell: |
+    $testProjects = Get-ChildItem -Path "$(Build.SourcesDirectory)" -Recurse -Filter "*Tests.csproj"
+
+    if ($testProjects.Count -eq 0) {
+        Write-Host "No test projects were found in the solution."
+        Write-Host "Test execution step completed with no test projects configured."
+        exit 0
+    }
+
+    foreach ($testProject in $testProjects) {
+        Write-Host "Running tests: $($testProject.FullName)"
+        dotnet test $testProject.FullName --configuration $(buildConfiguration) --no-build
+        if ($LASTEXITCODE -ne 0) {
+            exit $LASTEXITCODE
+        }
+    }
+  displayName: 'Run tests'
