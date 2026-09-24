@@ -14,6 +14,7 @@ namespace GiftOfGiversDisasterReliefSystem.Controllers
             _logger = logger;
         }
 
+        // C.2 Azure Pipeline trigger test
         public IActionResult Index()
         {
             return View();
